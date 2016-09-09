@@ -1,5 +1,5 @@
 (function(){
-  angular.module('cookbookApp', ["firebase", "ui.router"])
+  angular.module('cookbookApp', ["ui.router"])
 
   .config(function($stateProvider, $urlRouterProvider){
 
