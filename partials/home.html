@@ -1,6 +1,165 @@
 <section class="home">
-  <h1>Recipes</h1>
-  <div ng-repeat="recipe in recipes">
-    <h5>{{recipe.title}}</h5>
+  <div class="jumbotron">
+    <div class="forms">
+      <h2>SEARCH RECIPES</h2>
+
+      <form class="simple-search"
+        ng-submit="search(query)" ng-show="simpleSearch"
+        name="simpleSearch" action="javascript:void(0)" method="post" >
+        <input type="text" name="query" ng-model="query">
+      </form>
+
+      <form class="advanced-search" ng-show="!simpleSearch" name="adSearch" action="" method="post">
+        <input class="text-input" type="text" name="query" id="query">
+        <div class="checkboxes">
+          <fieldset>
+            <legend>Diet</legend>
+            <ul class="checkbox diet">
+              <li><input type="checkbox" name="text1" value="value1" id="text1"/><label for="text1">Pescetarian</label></li>
+              <li><input type="checkbox" name="text2" value="value2" id="text2"/><label for="text2">Vegan</label></li>
+              <li><input type="checkbox" name="text3" value="value3" id="text3"/><label for="text3">Vegetarian</label></li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Cuisine</legend>
+            <ul class="checkbox cuisine">
+              <li>
+                <input type="checkbox" name="chinese" value="chinese" id="chinese"/><label for="chinese">Chinese</label>
+              </li>
+              <li>
+                <input type="checkbox" name="japanese" value="japanese" id="japanese"/><label for="japanese">Japanese</label>
+              </li>
+              <li>
+                <input type="checkbox" name="korean" value="korean" id="korean"/><label for="korean">Korean</label>
+              </li>
+              <li>
+                <input type="checkbox" name="vietnamese" value="vietnamese" id="vietnamese"/><label for="vietnamese">Vietnamese</label>
+              </li>
+              <li>
+                <input type="checkbox" name="thai" value="thai" id="thai"/><label for="thai">Thai</label>
+              </li>
+              <li>
+                <input type="checkbox" name="indian" value="indian" id="indian"/><label for="indian">Indian</label>
+              </li>
+              <li>
+                <input type="checkbox" name="british" value="british" id="british"/><label for="british">British</label>
+              </li>
+              <li>
+                <input type="checkbox" name="french" value="french" id="french"/><label for="french">French</label>
+              </li>
+              <li>
+                <input type="checkbox" name="spanish" value="spanish" id="spanish"/><label for="spanish">Spanish</label>
+              </li>
+              <li>
+                <input type="checkbox" name="greek" value="greek" id="greek"/><label for="greek">Greek</label>
+              </li>
+              <li>
+                <input type="checkbox" name="german" value="german" id="german"/><label for="german">German</label>
+              </li>
+              <li>
+                <input type="checkbox" name="italian" value="italian" id="italian"/><label for="italian">Italian</label>
+              </li>
+              <li>
+                <input type="checkbox" name="mexican" value="mexican" id="mexican"/><label for="mexican">Mexican</label>
+              </li>
+              <li>
+                <input type="checkbox" name="middle eastern" value="middle eastern" id="midEast"/><label for="midEast">Middle Eastern</label>
+              </li>
+              <li>
+                <input type="checkbox" name="american" value="american" id="american"/><label for="american">American</label>
+              </li>
+              <li>
+                <input type="checkbox" name="cajun" value="cajun" id="cajun"/><label for="cajun">Cajun</label>
+              </li>
+              <li>
+                <input type="checkbox" name="southern" value="southern" id="southern"/><label for="southern">Southern</label>
+              </li>
+              <li>
+                <input type="checkbox" name="caribbean" value="caribbean" id="caribbean"/><label for="caribbean">Caribbean</label>
+              </li>
+              <li>
+                <input type="checkbox" name="latin american" value="latin american" id="latin"/><label for="latin">Latin American</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Intolerances</legend>
+            <ul class="checkbox intolerances">
+              <li>
+                <input type="checkbox" name="Dairy" value="Dairy" id="Dairy"/><label for="Dairy">Dairy</label>
+              </li>
+              <li>
+                <input type="checkbox" name="egg" value="egg" id="egg"/><label for="egg">Egg</label>
+              </li>
+              <li>
+                <input type="checkbox" name="gluten" value="gluten" id="gluten"/><label for="gluten">Gluten</label>
+              </li>
+              <li>
+                <input type="checkbox" name="peanut" value="peanut" id="peanut"/><label for="peanut">Peanut</label>
+              </li>
+              <li>
+                <input type="checkbox" name="sesame" value="sesame" id="sesame"/><label for="sesame">Sesame</label>
+              </li>
+              <li>
+                <input type="checkbox" name="seafood" value="seafood" id="seafood"/><label for="seafood">Seafood</label>
+              </li>
+              <li>
+                <input type="checkbox" name="shellfish" value="shellfish" id="shellfish"/><label for="shellfish">Shellfish</label>
+              </li>
+              <li>
+                <input type="checkbox" name="soy" value="soy" id="soy"/><label for="soy">Soy</label>
+              </li>
+              <li>
+                <input type="checkbox" name="sulfite" value="sulfite" id="sulfite"/><label for="sulfite">Sulfite</label>
+              </li>
+              <li>
+                <input type="checkbox" name="tree nut" value="tree nut" id="tree-nut"/><label for="tree-nut">Tree Nut</label>
+              </li>
+              <li>
+                <input type="checkbox" name="wheat" value="wheat" id="wheat"/><label for="wheat">Wheat</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Type</legend>
+            <ul class="checkbox type">
+              <li>
+                <input type="checkbox" name="main course" value="main course" id="main-course"/><label for="main-course">Main Course</label>
+              </li>
+              <li>
+                <input type="checkbox" name="side dish" value="side dish" id="side"/><label for="side">Side Dish</label>
+              </li>
+              <li>
+                <input type="checkbox" name="dessert" value="dessert" id="dessert"/><label for="dessert">Dessert</label>
+              </li>
+              <li>
+                <input type="checkbox" name="appetizer" value="appetizer" id="app"/><label for="app">Appetizer</label>
+              </li>
+              <li>
+                <input type="checkbox" name="salad" value="salad" id="salad"/><label for="salad">Salad</label>
+              </li>
+              <li>
+                <input type="checkbox" name="bread" value="bread" id="bread"/><label for="bread">Bread</label>
+              </li>
+              <li>
+                <input type="checkbox" name="breakfast" value="breakfast" id="breakfast"/><label for="breakfast">Breakfast</label>
+              </li>
+              <li>
+                <input type="checkbox" name="soup" value="soup" id="soup"/><label for="soup">Soup</label>
+              </li>
+              <li>
+                <input type="checkbox" name="beverage" value="beverage" id="beverage"/><label for="beverage">Beverage</label>
+              </li>
+              <li>
+                <input type="checkbox" name="sauce" value="sauce" id="sauce"/><label for="sauce">Sauce</label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+      </form>
+
+      <small ng-click="simpleSearch = !simpleSearch" ng-show="simpleSearch">Advanced Search</small>
+      <small ng-click="simpleSearch = !simpleSearch" ng-show="!simpleSearch">Search</small>
+    </div>
   </div>
 </section>

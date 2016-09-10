@@ -11,6 +11,10 @@
         templateUrl: 'partials/home.html',
         controller: 'MainController'
       })
-      // DO THE SAME AS ABOVE FOR OTHER VIEWS
+      .state('results', {
+        url: '/results',
+        templateUrl: 'partials/results.html',
+        controller: 'ResultsController'
+      })
   });
 })();

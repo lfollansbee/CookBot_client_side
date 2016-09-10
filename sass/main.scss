@@ -1,0 +1,109 @@
+@import "colors";
+@import "fonts";
+@import "mixins";
+
+*{
+  box-sizing: border-box;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $orange;
+  h1{
+    font-size: 4em;
+    margin-bottom: .5em;
+  }
+  nav{
+    width: 80%;
+    border-top: grey solid 1px;
+    ul{
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      li{
+        list-style: none;
+        display: inline;
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: bold;
+        a{
+          text-decoration: none;
+          color: currentColor;
+          &:hover{
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home .jumbotron{
+  background-image: url(../images/A535FDBB21.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.forms{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 4.5em 0;
+  form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .text-input{
+      padding: 10px;
+      font-size: 1.5rem;
+      width: 100%;
+      background-color: rgba(238, 238, 238, .8);
+      margin-bottom: .5em;
+    }
+  }
+  small{
+    text-shadow: 2px 2px 4px #000000;
+  }
+}
+.advanced-search{
+  padding: .5rem;
+  text-shadow: none;
+  border-radius: 5px;
+  .checkboxes{
+    background-color: rgba(238, 238, 238, .8);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    fieldset{
+      color: $darkbluegrey;
+      padding: 0;
+      margin: 0 .5em;
+      border: none;
+      border-radius: 5px;
+      ul{
+        list-style: none;
+        padding-left: 0;
+      }
+      legend{
+        font-size:.75em;
+      }
+    }
+  }
+  .checkbox{
+    label{
+      padding: 2px;
+    }
+    text-shadow: none;
+    font-size: .5em;
+  }
+}
