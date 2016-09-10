@@ -6,7 +6,6 @@
 
   function ResultsController($scope, SearchService, $http){
 
-    // $scope.view = 'Results Controller';
     $scope.recipes = SearchService.getResults();
 
   }
