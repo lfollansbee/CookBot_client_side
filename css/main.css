@@ -25,7 +25,7 @@ header {
     border-top: grey solid 1px; }
     header nav ul {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       padding: 0; }
       header nav ul li {
         list-style: none;
@@ -91,10 +91,9 @@ header {
       .advanced-search .checkboxes fieldset legend {
         font-size: .75em; }
   .advanced-search .checkbox {
+    padding: 2px;
     text-shadow: none;
     font-size: .5em; }
-    .advanced-search .checkbox label {
-      padding: 2px; }
 
 .results-container {
   display: flex;
