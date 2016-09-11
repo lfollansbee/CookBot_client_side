@@ -1,33 +1,39 @@
 <section class="home">
   <div class="jumbotron">
-    <div class="forms">
-      <h2>SEARCH RECIPES</h2>
+    <div class="container forms">
+      <h2 class="text-center">SEARCH RECIPES</h2>
 
-      <form class="simple-search"
-        ng-submit="search(query)" ng-show="simpleSearch"
-        name="simpleSearch" action="javascript:void(0)" method="post" >
-        <input class="text-input" type="text" name="query" ng-model="query">
-      </form>
+      <article class="row">
+        <form class="simple-search col-sm-offset-2 col-sm-8"
+          ng-submit="search(query)" ng-show="simpleSearch"
+          name="simpleSearch" action="javascript:void(0)" method="post" >
+          <input class="text-input" type="text" name="query" ng-model="query">
+        </form>
+      </article>
 
-      <form class="advanced-search"
-        ng-submit="advSearch(query)" ng-show="!simpleSearch" name="adSearch" action="javascript:void(0)" method="post" >
-        <input class="text-input" type="text" name="query" ng-model="query">
-          <div class="checkboxes">
-            <fieldset ng-repeat="field in fieldsets">
-              <legend>{{field.title}}</legend>
-              <ul class="checkbox">
-                <li ng-repeat="option in field.options">
-                  <label>
-                    <input type="checkbox" ng-model="option.value"/>{{option.name}}
-                  </label>
-                </li>
-              </ul>
-            </fieldset>
-          </div> <!-- checkboxes -->
-      </form>
+      <article class="row">
+        <form class="advanced-search col-sm-offset-2 col-sm-8"
+          ng-submit="advSearch(query)" ng-show="!simpleSearch" name="adSearch" action="javascript:void(0)" method="post" >
+          <input class="text-input" type="text" name="query" ng-model="query">
+            <div class="checkboxes container">
+              <div class="row">
+                <fieldset ng-repeat="field in fieldsets" class="col-sm-3">
+                  <legend>{{field.title}}</legend>
+                  <ul class="checkbox">
+                    <li ng-repeat="option in field.options">
+                      <label>
+                        <input type="checkbox" ng-model="option.value"/>{{option.name}}
+                      </label>
+                    </li>
+                  </ul>
+                </fieldset>
+              </div><!--row-->
+            </div> <!-- checkboxes -->
+        </form>
+      </article>
 
-      <small ng-click="simpleSearch = !simpleSearch" ng-show="simpleSearch">Advanced Search</small>
-      <small ng-click="simpleSearch = !simpleSearch" ng-show="!simpleSearch">Simple Search</small>
-    </div>
-  </div>
+        <p class="text-center" ng-click="simpleSearch = !simpleSearch" ng-show="simpleSearch">Advanced Search</p>
+        <p class="text-center" ng-click="simpleSearch = !simpleSearch" ng-show="!simpleSearch">Simple Search</p>
+    </div> <!--forms-->
+  </div> <!-- jumbotron -->
 </section>

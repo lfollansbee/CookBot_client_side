@@ -10,65 +10,61 @@ h1 {
   box-sizing: border-box; }
 
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: #e06900; }
+  header h1 {
+    font-size: 5em;
+    margin-bottom: .5em; }
   header a {
     text-decoration: none;
     color: currentColor; }
-  header h1 {
-    font-size: 4em;
-    margin-bottom: .5em; }
+    header a:hover {
+      color: currentColor;
+      text-decoration: none; }
   header nav {
-    width: 80%;
     border-top: grey solid 1px; }
     header nav ul {
       display: flex;
       justify-content: space-around;
-      padding: 0; }
+      padding: 0;
+      margin: 1.5em; }
       header nav ul li {
         list-style: none;
-        display: inline;
-        font-size: 1em;
+        font-size: 1.25em;
         text-transform: uppercase;
         font-weight: bold; }
         header nav ul li a {
           text-decoration: none;
           color: currentColor; }
           header nav ul li a:hover {
-            color: #db0000; }
+            color: #db0000;
+            text-decoration: none; }
 
 .home .jumbotron {
   background-image: url(../images/A535FDBB21.jpg);
-  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   color: white;
   font-size: 2rem;
-  text-shadow: 2px 2px 4px #000000; }
-
-.forms {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-  margin: 4.5em 0; }
-  .forms form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .forms form .text-input {
-      padding: 10px;
-      font-size: 1.5rem;
-      width: 100%;
-      background-color: rgba(238, 238, 238, 0.8);
-      margin-bottom: .5em; }
-  .forms small {
+  margin-bottom: 0;
+  min-height: 27em; }
+  .home .jumbotron h2 {
+    margin-top: 2em;
+    font-size: 2em;
     text-shadow: 2px 2px 4px #000000; }
+
+.forms form .text-input {
+  padding: 10px;
+  font-size: 1.5em;
+  width: 100%;
+  background-color: rgba(238, 238, 238, 0.8);
+  margin-bottom: .5em;
+  color: #3e4055; }
+.forms p {
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 1.25em;
+  margin-bottom: 1em; }
 
 .advanced-search {
   padding: .5rem;
@@ -76,29 +72,22 @@ header {
   border-radius: 5px; }
   .advanced-search .checkboxes {
     background-color: rgba(238, 238, 238, 0.8);
-    width: 100%;
-    display: flex;
-    justify-content: space-between; }
+    width: 100%; }
     .advanced-search .checkboxes fieldset {
       color: #3e4055;
-      padding: 0;
-      margin: 0 .5em;
+      padding: 0 0 0 .5em;
       border: none;
       border-radius: 5px; }
       .advanced-search .checkboxes fieldset ul {
         list-style: none;
-        padding-left: 0; }
-      .advanced-search .checkboxes fieldset legend {
+        padding-left: 0;
         font-size: .75em; }
+      .advanced-search .checkboxes fieldset legend {
+        font-size: 1em;
+        margin: 0; }
   .advanced-search .checkbox {
     padding: 2px;
     text-shadow: none;
     font-size: .5em; }
-
-.results-container {
-  display: flex;
-  justify-content: center; }
-  .results-container .results {
-    width: 80%; }
 
 /*# sourceMappingURL=main.css.map */
