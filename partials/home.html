@@ -9,25 +9,25 @@
         <input class="text-input" type="text" name="query" ng-model="query">
       </form>
 
-      <form class="advanced-search" ng-show="!simpleSearch" name="adSearch" action="" method="post">
-        <input class="text-input" type="text" name="query" id="query">
-        <div class="checkboxes">
-          <fieldset ng-repeat="field in fieldsets">
-            <legend>{{field.title}}</legend>
-            <ul class="checkbox">
-              <li ng-repeat="option in field.options">
-                <label>
-                  <input type="checkbox" checklist-value="option"
-                  name="option" checklist-model="option"/>{{option}}
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-        </div>
+      <form class="advanced-search"
+        ng-submit="advSearch(query)" ng-show="!simpleSearch" name="adSearch" action="javascript:void(0)" method="post" >
+        <input class="text-input" type="text" name="query" ng-model="query">
+          <div class="checkboxes">
+            <fieldset ng-repeat="field in fieldsets">
+              <legend>{{field.title}}</legend>
+              <ul class="checkbox">
+                <li ng-repeat="option in field.options">
+                  <label>
+                    <input type="checkbox" ng-model="option.value"/>{{option.name}}
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div> <!-- checkboxes -->
       </form>
 
       <small ng-click="simpleSearch = !simpleSearch" ng-show="simpleSearch">Advanced Search</small>
-      <small ng-click="simpleSearch = !simpleSearch" ng-show="!simpleSearch">Search</small>
+      <small ng-click="simpleSearch = !simpleSearch" ng-show="!simpleSearch">Simple Search</small>
     </div>
   </div>
 </section>
