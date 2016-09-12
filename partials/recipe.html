@@ -1,6 +1,18 @@
 <section class="recipe container">
   <h2>{{recipe.title}}</h2>
-  <ul>
-    <li ng-repeat="ingredient in recipe.extendedIngredients">{{ingredient.originalString}}</li>
-  </ul>
+  <div class="row">
+    <article class="col-md-7">
+      <p>Source:
+        <a ng-href={{recipe.sourceUrl}} target="_blank">{{recipe.sourceName}}</a>
+      </p>
+      <p>Serves: {{recipe.servings}}</p>
+      <p>Ready in {{recipe.readyInMinutes}} minutes</p>
+      <ul>Ingredients:
+        <li ng-repeat="ingredient in recipe.extendedIngredients">
+          {{ingredient.originalString}}
+        </li>
+      </ul>
+    </article>
+    <img ng-src="{{recipe.image}}" class="col-md-3">
+  </div>
 </section>

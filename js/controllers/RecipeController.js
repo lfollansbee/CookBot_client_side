@@ -18,9 +18,11 @@
     .then(function(response){
        $scope.recipe = (response.data)
       // console.log(response.data);
+      console.log($scope.recipe);
     }, function(err){
       return err;
     });
+
 
   }
 })();
