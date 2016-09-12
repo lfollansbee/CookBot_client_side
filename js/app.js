@@ -21,6 +21,11 @@
         templateUrl: 'partials/recipe.html',
         controller: 'RecipeController'
       })
+      .state('fridge', {
+        url: '/fridge',
+        templateUrl: 'partials/fridge.html',
+        controller: 'FridgeController'
+      })
 
   });
 })();
