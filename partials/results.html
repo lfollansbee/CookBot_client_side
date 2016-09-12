@@ -1,6 +1,8 @@
 <section class="results container">
   <h2>Recipe Results</h2>
   <div ng-repeat="recipe in recipes">
-    <h5 ui-sref="recipe({ id: recipe.id })">{{recipe.title}}</h5>
+    <a ui-sref="recipe({ id: recipe.id })">
+      <h5>{{recipe.title}}</h5>
+    </a>
   </div>
 </section>

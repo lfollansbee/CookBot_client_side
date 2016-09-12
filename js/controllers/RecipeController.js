@@ -2,16 +2,25 @@
   angular.module("cookbookApp")
   .controller("RecipeController", RecipeController)
 
-  RecipeController.$inject = ["$scope", "GetRecipeService", "$http", "$stateParams"];
+  RecipeController.$inject = ["$scope", "$http", "$stateParams"];
 
-  function RecipeController($scope, GetRecipeService, $http, $stateParams){
+  function RecipeController($scope, $http, $stateParams){
+    $scope.recipe = {}
+    $scope.recipeId = $stateParams.id;
 
-    $scope.fetchRecipe = (function() {
-      GetRecipeService.fetchRecipe($stateParams.id)
-    })()
-
-    $scope.recipe = GetRecipeService.getRecipe();
-    console.log("recipe:", $scope.recipe);
+    $http({
+      method: 'GET',
+      params:{
+        id: $scope.recipeId
+      },
+      url: 'http://localhost:3000/recipeId/'
+    })
+    .then(function(response){
+       $scope.recipe = (response.data)
+      // console.log(response.data);
+    }, function(err){
+      return err;
+    });
 
   }
 })();
