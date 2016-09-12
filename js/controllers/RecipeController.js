@@ -2,9 +2,9 @@
   angular.module("cookbookApp")
   .controller("RecipeController", RecipeController)
 
-  RecipeController.$inject = ["$scope", "$http", "$stateParams"];
+  RecipeController.$inject = ["$scope", "$http", "$stateParams", "SpeechService"];
 
-  function RecipeController($scope, $http, $stateParams){
+  function RecipeController($scope, $http, $stateParams, SpeechService){
     $scope.recipe = {}
     $scope.recipeId = $stateParams.id;
 
@@ -16,13 +16,15 @@
       url: 'http://localhost:3000/recipeId/'
     })
     .then(function(response){
-       $scope.recipe = (response.data)
-      // console.log(response.data);
+      $scope.recipe = (response.data)
       console.log($scope.recipe);
     }, function(err){
       return err;
     });
 
+    $scope.speech = function(ingredient){
+      SpeechService.textToSpeech(ingredient)
+    }
 
   }
 })();

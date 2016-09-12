@@ -8,7 +8,7 @@
       <p>Serves: {{recipe.servings}}</p>
       <p>Ready in {{recipe.readyInMinutes}} minutes</p>
       <ul>Ingredients:
-        <li ng-repeat="ingredient in recipe.extendedIngredients">
+        <li ng-model="ingredient" ng-repeat="ingredient in recipe.extendedIngredients" ng-click="speech(ingredient.originalString)">
           {{ingredient.originalString}}
         </li>
       </ul>
