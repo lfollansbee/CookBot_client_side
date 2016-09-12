@@ -24,6 +24,7 @@
       };
 
       function simpleSearch(item){
+        var searchQuery = item;
         $http({
           method: 'GET',
           params:{
@@ -34,7 +35,7 @@
         .then(function(response){
           setResults(response.data.results);
           // console.log(response.data.results);
-          $location.path('/results')
+          $location.path('/results/' + searchQuery)
         }, function(err){
           return err;
         });
@@ -69,7 +70,7 @@
         .then(function(response){
           setResults(response.data.results);
           // console.log(response.data.results);
-          $location.path('/results')
+          $location.path('/results/' + params)
         }, function(err){
           return err;
         });

@@ -12,9 +12,15 @@
         controller: 'MainController'
       })
       .state('results', {
-        url: '/results',
+        url: '/results/:id',
         templateUrl: 'partials/results.html',
         controller: 'ResultsController'
       })
+      .state('recipe', {
+        url: '/recipe/:id',
+        templateUrl: 'partials/recipe.html',
+        controller: 'RecipeController'
+      })
+
   });
 })();
