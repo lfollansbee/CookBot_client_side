@@ -2,9 +2,9 @@
   angular.module("cookbookApp")
   .controller("FridgeController", FridgeController)
 
-  FridgeController.$inject = ["$scope", "$stateParams", "FridgeService"];
+  FridgeController.$inject = ["$scope", "FridgeService"];
 
-  function FridgeController($scope, $stateParams, FridgeService){
+  function FridgeController($scope, FridgeService){
     $scope.fridgeItems = FridgeService.getItems()
     $scope.itemNames = []
 

@@ -1,0 +1,11 @@
+<section class="results container">
+  <h2>Recipe Results</h2>
+  <p>
+    <span ng-repeat="item in fridgeItems">{{item.itemName}} </span>
+  </p>
+  <div ng-repeat="recipe in returnedRecipes">
+    <a ui-sref="recipe({ id: recipe.id })">
+      <h5>{{recipe.title}}</h5>
+    </a>
+  </div>
+</section>

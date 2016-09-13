@@ -18,6 +18,14 @@
       getResults:getResults
     };
 
+    function setResults(data){
+      results = data;
+    };
+
+    function getResults(){
+      return results;
+    };
+
     function getItems(){
         return fridgeItems
     };
@@ -25,7 +33,6 @@
     function addItem(input){
         input.editFormShowing = false;
         fridgeItems.push(input)
-        // console.log(fridgeItems);
         return fridgeItems
     };
 
@@ -38,13 +45,6 @@
         fridgeItems.splice(index, 1)
     };
 
-    function setResults(data){
-      results = data;
-    };
-
-    function getResults(){
-      return results;
-    };
 
     function fridgeSearch(array){
       var searchQuery = array;
@@ -57,8 +57,9 @@
         url: 'http://localhost:3000/search/fridge'
       })
       .then(function(response){
-        // console.log(response.data);
+        console.log(response.data);
         setResults(response.data);
+        $location.path('/fridge-results' )
       }, function(err){
         return err;
       });
