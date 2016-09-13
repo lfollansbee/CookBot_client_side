@@ -1,5 +1,8 @@
 (function(){
-  angular.module('cookbookApp', ["ui.router"])
+  angular
+  .module('cookbookApp', [
+    "ui.router"
+  ])
 
   .config(function($stateProvider, $urlRouterProvider){
 

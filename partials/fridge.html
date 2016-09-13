@@ -1,3 +1,33 @@
 <section class="fridge container">
   <h2>What's in my fridge?</h2>
+
+  <form name="addItemForm" class="toDoApp" ng-submit="addItem(item)" action="javascript:void(0)">
+    <input name="itemName" type="text"
+    ng-model="item.itemName" required>
+    <input type="submit" value="Add" ng-class="{valid:addItemForm.item.itemName$valid}"
+    ng-disabled="addItemForm.$invalid">
+  </form>
+  <h3>All of Your Items</h3>
+  <ul ng-repeat="item in fridgeItems track by $index">
+    <li>{{item.itemName}}
+    <button class="edit" ng-click="toggleEditForm(item)">Edit this item</button>
+    <button class="delete" ng-click="deleteItem($index)">X</button>
+  </li>
+
+    <form name="editForm" ng-show="item.editFormShowing"
+    action="javascript:void(0)"
+    ng-submit="editItem($index, item)">
+      <input type="text" ng-model="item.itemName" value="{{item.itemName}}" required>
+      <input type="submit" value="Edit"
+      ng-class="{valid:editForm.item.itemName$valid}"
+      ng-disable="editForm.$invalid">
+    </form>
+  </ul>
+  <button ng-click="fridgeSearch()">Search for Recipes</button>
+
+  <div ng-repeat="result in fridgeResults">
+    <h4>{{result.title}}</h4>
+  </div>
+
+
 </section>

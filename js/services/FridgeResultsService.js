@@ -1,10 +1,10 @@
 (function(){
   angular.module("cookbookApp")
-  .service("FridgeService", FridgeService);
+  .service("FridgeResultsService", FridgeResultsService);
 
-  FridgeService.$inject = ["$http", "$stateParams"]
+  FridgeResultsService.$inject = ["$http", "$stateParams"]
 
-  function FridgeService($http, $stateParams){
+  function FridgeResultsService($http, $stateParams){
     var fridgeItems = []
     var results = []
 
@@ -16,34 +16,6 @@
       fridgeSearch: fridgeSearch,
       setResults: setResults,
       getResults:getResults
-    };
-
-    function getItems(){
-        return fridgeItems
-    };
-
-    function addItem(input){
-        input.editFormShowing = false;
-        fridgeItems.push(input)
-        // console.log(fridgeItems);
-        return fridgeItems
-    };
-
-    function editItem(index, item){
-        fridgeItems[index].itemName = item.itemName
-        fridgeItems[index].editFormShowing = false
-    };
-
-    function deleteItem(index){
-        fridgeItems.splice(index, 1)
-    };
-
-    function setResults(data){
-      results = data;
-    };
-
-    function getResults(){
-      return results;
     };
 
     function fridgeSearch(array){
