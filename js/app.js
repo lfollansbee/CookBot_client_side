@@ -12,7 +12,7 @@
       .state('home', {
         url: '/home',
         templateUrl: 'partials/home.html',
-        controller: 'MainController'
+        controller: 'SearchController'
       })
       .state('results', {
         url: '/results/:id',

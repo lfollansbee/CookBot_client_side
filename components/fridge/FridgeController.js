@@ -38,7 +38,5 @@
       FridgeService.fridgeSearch($scope.itemNames)
     }
 
-    $scope.fridgeResults = FridgeService.getResults()
-
   }
 })();

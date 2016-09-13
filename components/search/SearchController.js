@@ -1,9 +1,9 @@
 (function(){
   angular.module("cookbookApp")
-  .controller("MainController", MainController)
-  MainController.$inject = ["$scope", "SearchService"];
+  .controller("SearchController", SearchController)
+  SearchController.$inject = ["$scope", "SearchService"];
 
-  function MainController($scope, SearchService){
+  function SearchController($scope, SearchService){
 
     $scope.fieldsets=[
       diets= {

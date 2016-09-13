@@ -2,9 +2,9 @@
   angular.module("cookbookApp")
   .service("FridgeService", FridgeService);
 
-  FridgeService.$inject = ["$http", "$stateParams"]
+  FridgeService.$inject = ["$http", "$stateParams", "$location"]
 
-  function FridgeService($http, $stateParams){
+  function FridgeService($http, $stateParams, $location){
     var fridgeItems = []
     var results = []
 
@@ -48,7 +48,7 @@
 
     function fridgeSearch(array){
       var searchQuery = array;
-      console.log(searchQuery);
+      // console.log(searchQuery);
       $http({
         method: 'GET',
         params:{
@@ -57,13 +57,12 @@
         url: 'http://localhost:3000/search/fridge'
       })
       .then(function(response){
-        console.log(response.data);
+        // console.log(response.data);
         setResults(response.data);
       }, function(err){
         return err;
       });
     }
-
 
   }
 })()

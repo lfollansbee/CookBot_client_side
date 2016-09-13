@@ -7,6 +7,5 @@
   function ResultsController($scope, SearchService, $http, $stateParams){
     $scope.recipes = SearchService.getResults();
 
-
   }
 })();
