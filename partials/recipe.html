@@ -12,8 +12,10 @@
           {{ingredient.originalString}}
         </li>
       </ul>
-      <ol>Instructions
-        <li ng-model="instruction" ng-repeat="instruction in instructions">{{instruction.step}}</li>
+      <ol ng-show="areInstructions">Instructions
+        <li ng-model="instruction"
+        ng-repeat="instruction in instructions"
+        ng-click="speech(instruction.step)">{{instruction.step}}</li>
       </ol>
     </article>
     <img ng-src="{{recipe.image}}" class="col-md-3">

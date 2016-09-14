@@ -12,7 +12,6 @@
         textToSpeech: textToSpeech
       };
 
-
       function textToSpeech(text){
         var line = text;
         $http({
@@ -21,13 +20,14 @@
             text: line
           },
           url: 'http://localhost:3000/speech'
+          // url: 'https://cookbook-server.herokuapp.com/speech'
         })
         .then(function(response){
+          console.log(response.data);
         }, function(err){
           return err;
         });
       }
-
 
     }
 })();
