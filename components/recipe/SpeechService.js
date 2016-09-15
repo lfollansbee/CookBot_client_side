@@ -7,12 +7,23 @@
 
     function SpeechService($http) {
       var text = ""
+      var sound = ""
 
       return{
-        textToSpeech: textToSpeech
+        textToSpeech: textToSpeech,
+        setAudio: setAudio,
+        getAudio: getAudio
       };
 
-      function textToSpeech(text){
+      function setAudio(data){
+        sound = data;
+      };
+
+      function getAudio(){
+        return sound
+      }
+
+      function textToSpeech(array){
         var line = text;
         $http({
           method: 'GET',
@@ -23,7 +34,9 @@
           // url: 'https://cookbook-server.herokuapp.com/speech'
         })
         .then(function(response){
-          console.log(response.data);
+          // console.log(response.data);
+          console.log(typeof(response.data));
+          setAudio(response.data)
         }, function(err){
           return err;
         });

@@ -8,14 +8,16 @@
       <p>Serves: {{recipe.servings}}</p>
       <p>Ready in {{recipe.readyInMinutes}} minutes</p>
       <ul>Ingredients:
-        <li ng-model="ingredient" ng-repeat="ingredient in recipe.extendedIngredients" ng-click="speech(ingredient.originalString)">
+        <li ng-model="ingredient" ng-repeat="ingredient in recipe.extendedIngredients" >
           {{ingredient.originalString}}
         </li>
       </ul>
       <ol ng-show="areInstructions">Instructions
         <li ng-model="instruction"
         ng-repeat="instruction in instructions"
-        ng-click="speech(instruction.step)">{{instruction.step}}</li>
+        ng-click="speech(instruction.step)">{{instruction.step}}
+          <br><audio controls><source ng-src="{{audio}}" type="audio/ogg"></audio>
+        </li>
       </ol>
     </article>
     <img ng-src="{{recipe.image}}" class="col-md-3">
