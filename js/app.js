@@ -1,7 +1,8 @@
 (function(){
   angular
-  .module('cookbookApp', [
-    "ui.router"
+    .module('cookbookApp', [
+    "ui.router",
+    "cookbookApp.audios"
   ])
 
   .config(function($stateProvider, $urlRouterProvider){

@@ -13,10 +13,11 @@
         </li>
       </ul>
       <ol ng-show="areInstructions">Instructions
-        <li ng-model="instruction"
-        ng-repeat="instruction in instructions"
-        ng-click="speech(instruction.step)">{{instruction.step}}
-          <br><audio controls><source ng-src="{{audio}}" type="audio/ogg"></audio>
+        <li ng-repeat="instruction in instructions"
+          ng-click="speech(instruction.step)">{{instruction.step}}
+          <!-- <br> -->
+          <!-- <audio controls><source ng-src="http://localhost:3000/speech/hello%20lucy" type="audio/ogg"></audio> -->
+          <div audios code="{{instruction.step}}"></div>
         </li>
       </ol>
     </article>

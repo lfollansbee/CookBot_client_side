@@ -1,10 +1,14 @@
 (function(){
-  angular.module("cookbookApp")
-  .controller("RecipeController", RecipeController)
+  angular
+    .module("cookbookApp")
+    .controller("RecipeController", RecipeController)
+    .filter('encodeURIComponent', function() {
+    return window.encodeURIComponent;
+});
 
-  RecipeController.$inject = ["$scope", "$http", "$stateParams", "SpeechService", "$q"];
+  RecipeController.$inject = ["$scope", "$http", "$stateParams", "$q"];
 
-  function RecipeController($scope, $http, $stateParams, SpeechService, $q){
+  function RecipeController($scope, $http, $stateParams, $q){
     $scope.recipe = {}
     $scope.instructions = [];
     $scope.recipeId = $stateParams.id;
@@ -16,13 +20,8 @@
       }
     }
 
-    $scope.speech = function(){
-      SpeechService.textToSpeech(line)
-      $scope.audio = SpeechService.getAudio
-    }
-
-    // $scope.speech = function(){
-    //   SpeechService.textToSpeech(array)
+    // $scope.speech = function(line){
+    //   SpeechService.textToSpeech(line)
     //   $scope.audio = SpeechService.getAudio
     // }
 

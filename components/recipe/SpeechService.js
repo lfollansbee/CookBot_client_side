@@ -23,7 +23,7 @@
         return sound
       }
 
-      function textToSpeech(array){
+      function textToSpeech(text){
         var line = text;
         $http({
           method: 'GET',
@@ -34,8 +34,8 @@
           // url: 'https://cookbook-server.herokuapp.com/speech'
         })
         .then(function(response){
-          // console.log(response.data);
-          console.log(typeof(response.data));
+          console.log(response.data);
+          // console.log(typeof(response.data));
           setAudio(response.data)
         }, function(err){
           return err;
