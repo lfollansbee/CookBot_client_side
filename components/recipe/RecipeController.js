@@ -27,7 +27,7 @@
           id: $scope.recipeId
         },
         url: 'http://localhost:3000/recipeId/'
-        // url: 'https://cookbook-server.herokuapp.com/recipeId/'
+        // url: 'https://cookbook-app.herokuapp.com/recipeId/'
       }),
       $http({
         method: 'GET',
@@ -35,7 +35,7 @@
           id: $scope.recipeId
         },
         url: 'http://localhost:3000/recipeInstructions/'
-        // url: 'https://cookbook-server.herokuapp.com/recipeInstructions/'
+        // url: 'https://cookbook-app.herokuapp.com/recipeInstructions/'
       })
     ]).then(function(response) {
       $scope.recipe = (response[0].data)

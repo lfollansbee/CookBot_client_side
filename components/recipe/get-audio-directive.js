@@ -39,6 +39,12 @@
       }
     }
 
+    $scope.splitSteps = function(array){
+      // for (var i = 0; i < array.length; i++) {
+        console.log($scope.instructions.step.length);
+      // }
+    }
+
     $q.all([
       $http({
         method: 'GET',
@@ -46,7 +52,7 @@
           id: $scope.recipeId
         },
         url: 'http://localhost:3000/recipeId/'
-        // url: 'https://cookbook-server.herokuapp.com/recipeId/'
+        // url: 'https://cookbook-app.herokuapp.com/recipeId/'
       }),
       $http({
         method: 'GET',
@@ -54,13 +60,14 @@
           id: $scope.recipeId
         },
         url: 'http://localhost:3000/recipeInstructions/'
-        // url: 'https://cookbook-server.herokuapp.com/recipeInstructions/'
+        // url: 'https://cookbook-app.herokuapp.com/recipeInstructions/'
       })
     ]).then(function(response) {
       $scope.recipe = (response[0].data)
       $scope.instructions = (response[1].data[0].steps)
       $scope.checkInstructions($scope.instructions)
-      console.log($scope.recipe, $scope.instructions);
+      // console.log($scope.recipe, $scope.instructions);
+      // $scope.splitSteps($scope.instructions)
     });
   }
 

@@ -1,7 +1,7 @@
 <section class="recipe container">
   <h2>{{recipe.title}}</h2>
   <div class="row">
-    <article class="col-md-7">
+    <article class="col-md-8">
       <p>Source:
         <a ng-href={{recipe.sourceUrl}} target="_blank">{{recipe.sourceName}}</a>
       </p>
@@ -13,10 +13,8 @@
         </li>
       </ul>
       <ol ng-show="areInstructions">Instructions
-        <li ng-repeat="instruction in instructions"
-          ng-click="speech(instruction.step)">{{instruction.step}}
-          <!-- <br> -->
-          <!-- <audio controls><source ng-src="http://localhost:3000/speech/hello%20lucy" type="audio/ogg"></audio> -->
+        <li ng-repeat="instruction in instructions">{{instruction.step}}
+          <br>
           <div audios code="instruction.step"></div>
         </li>
       </ol>
