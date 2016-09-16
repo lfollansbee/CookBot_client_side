@@ -4,7 +4,7 @@
     .controller("RecipeController", RecipeController)
     .filter('encodeURIComponent', function() {
     return window.encodeURIComponent;
-});
+  });
 
   RecipeController.$inject = ["$scope", "$http", "$stateParams", "$q"];
 
@@ -19,11 +19,6 @@
         $scope.areInstructions = false;
       }
     }
-
-    // $scope.speech = function(line){
-    //   SpeechService.textToSpeech(line)
-    //   $scope.audio = SpeechService.getAudio
-    // }
 
     $q.all([
       $http({
@@ -48,6 +43,6 @@
       $scope.checkInstructions($scope.instructions)
       console.log($scope.recipe, $scope.instructions);
     });
-
   }
+
 })();
