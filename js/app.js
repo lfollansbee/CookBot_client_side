@@ -32,9 +32,8 @@
       })
       .state('fridge-results', {
           url: '/fridge-results',
-          templateUrl: 'partials/fridge-results.html',
+          templateUrl: 'partials/results.html',
           controller: 'FridgeResultsController'
-      });
-
+      })
   });
 })();

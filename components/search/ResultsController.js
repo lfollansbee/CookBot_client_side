@@ -5,8 +5,8 @@
   ResultsController.$inject = ["$scope", "SearchService", "$stateParams"];
 
   function ResultsController($scope, SearchService, $stateParams){
-    
-    $scope.recipes = SearchService.getResults();
+
+    $scope.returnedRecipes = SearchService.getResults();
 
   }
 })();
