@@ -3,7 +3,9 @@
   <div class="row">
     <article class="col-md-8">
       <p>Source:
-        <a ng-href={{recipe.sourceUrl}} target="_blank">{{recipe.sourceName}}</a>
+        <a ng-href={{recipe.sourceUrl}} target="_blank">{{recipe.sourceName}}
+          <span ng-hide="sourceExists">{{recipe.sourceUrl}}</span>
+        </a>
       </p>
       <p>Serves: {{recipe.servings}}</p>
       <p>Ready in {{recipe.readyInMinutes}} minutes</p>
