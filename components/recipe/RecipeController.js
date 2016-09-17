@@ -43,6 +43,6 @@
       $scope.checkInstructions($scope.instructions)
       console.log($scope.recipe, $scope.instructions);
     });
-  }
 
+  }
 })();

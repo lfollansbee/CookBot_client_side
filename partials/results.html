@@ -1,8 +1,8 @@
 <section class="results container">
-  <h2>Recipe Results</h2>
-  <p ng-show="fridgeItems">Results for:
+  <h2>Recipe Results:</h2>
+  <h3 ng-show="fridgeItems">
     <span ng-repeat="item in fridgeItems">{{item.itemName}} </span>
-  </p>
+  </h3>
   <div ng-repeat="recipe in returnedRecipes">
     <a ui-sref="recipe({ id: recipe.id })">
       <h5>{{recipe.title}}</h5>

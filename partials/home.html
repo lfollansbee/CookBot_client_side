@@ -6,14 +6,14 @@
       <article class="row">
         <form class="simple-search col-sm-offset-2 col-sm-8"
           ng-submit="search(query)" ng-show="simpleSearch"
-          name="simpleSearch" action="javascript:void(0)" method="post" >
+          name="simpleSearch" action="javascript:void(0)" method="post" autocomplete="off">
           <input class="text-input" type="text" name="query" ng-model="query">
         </form>
       </article>
 
       <article class="row">
         <form class="advanced-search col-sm-offset-2 col-sm-8"
-          ng-submit="advSearch(query)" ng-show="!simpleSearch" name="adSearch" action="javascript:void(0)" method="post" >
+          ng-submit="advSearch(query)" ng-show="!simpleSearch" name="adSearch" action="javascript:void(0)" method="post" autocomplete="off">
           <input class="text-input" type="text" name="query" ng-model="query">
             <div class="checkboxes container">
               <div class="row">

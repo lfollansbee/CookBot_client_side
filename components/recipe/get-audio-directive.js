@@ -17,7 +17,10 @@
       link: function ($scope) {
           $scope.$watch('code', function (newVal, oldVal) {
              if (newVal !== undefined) {
-                 $scope.url = $sce.trustAsResourceUrl("http://localhost:3000/speech/" + newVal);
+                 $scope.url = $sce.trustAsResourceUrl(
+                   "http://localhost:3000/speech/"
+                  //  "https://cookbook-app.herokuapp.com"
+                   + newVal);
              }
           });
       }

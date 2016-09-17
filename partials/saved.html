@@ -1,0 +1,9 @@
+<section class="results container">
+  <h2>Saved Recipes</h2>
+  <div ng-repeat="recipe in recipes">
+    <a ui-sref="recipe({ id: recipe.id })">
+      <h5>{{recipe.title}}</h5>
+    </a>
+  </div>
+  <button class="btn">Add Recipe</button>
+</section>

@@ -35,5 +35,10 @@
           templateUrl: 'partials/results.html',
           controller: 'FridgeResultsController'
       })
+      .state('saved', {
+          url: '/saved',
+          templateUrl: 'partials/saved.html',
+          controller: 'SavedController'
+      })
   });
 })();

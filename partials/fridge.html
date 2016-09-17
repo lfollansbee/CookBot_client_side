@@ -1,7 +1,7 @@
 <section class="fridge container">
   <h2>What's in my fridge?</h2>
 
-  <form name="addItemForm" class="toDoApp" ng-submit="addItem(item)" action="javascript:void(0)">
+  <form name="addItemForm" class="toDoApp" ng-submit="addItem(item)" action="javascript:void(0)" autocomplete="off">
     <input name="itemName" type="text"
     ng-model="item.itemName" required>
     <input type="submit" value="Add" ng-class="{valid:addItemForm.item.itemName$valid}"
@@ -16,7 +16,7 @@
 
     <form name="editForm" ng-show="item.editFormShowing"
     action="javascript:void(0)"
-    ng-submit="editItem($index, item)">
+    ng-submit="editItem($index, item)" autocomplete="off">
       <input type="text" ng-model="item.itemName" value="{{item.itemName}}" required>
       <input type="submit" value="Edit"
       ng-class="{valid:editForm.item.itemName$valid}"
