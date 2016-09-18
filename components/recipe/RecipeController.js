@@ -54,6 +54,14 @@
       }
     });
 
+    // $speechRecognition.onstart(function(){
+    //   $speechSynthetis.speak('Yes? How can I help you?', 'en-UK');
+    // });
+    // $speechRecognition.setLang('en-US');
+    // $speechRecognition.listen();
+    // $speechRecognition.onUtterance(function(utterance){
+    //   console.log(utterance); // buy a milk
+    // });
 
 
   }
