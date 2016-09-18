@@ -3,9 +3,9 @@
     .module("cookbookApp")
     .controller("RecipeController", RecipeController)
 
-  RecipeController.$inject = ["$scope", "$http", "$stateParams", "$q"];
+  RecipeController.$inject = ["$scope", "$http", "$stateParams", "$q", "$speechRecognition", "$speechSynthetis", "$speechCorrection"];
 
-  function RecipeController($scope, $http, $stateParams, $q){
+  function RecipeController($scope, $http, $stateParams, $q, $speechRecognition, $speechSynthetis, $speechCorrection){
     $scope.recipe = {}
     $scope.instructions = [];
     $scope.recipeId = $stateParams.id;
@@ -53,6 +53,8 @@
         $scope.areInstructions = false;
       }
     });
+
+
 
   }
 })();

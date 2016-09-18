@@ -2,7 +2,8 @@
   angular
     .module('cookbookApp', [
     "ui.router",
-    "cookbookApp.audios"
+    "cookbookApp.audios",
+    "adaptive.speech"
   ])
 
   .config(function($stateProvider, $urlRouterProvider){
