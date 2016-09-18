@@ -11,6 +11,7 @@
     $scope.recipeId = $stateParams.id;
     $scope.areInstructions = true;
     $scope.sourceExists = false;
+    $scope.stepLength = 0
 
     $scope.checkInstructions = function(array){
       if (array.length === 0){
@@ -54,15 +55,43 @@
       }
     });
 
-    // $speechRecognition.onstart(function(){
-    //   $speechSynthetis.speak('Yes? How can I help you?', 'en-UK');
-    // });
-    // $speechRecognition.setLang('en-US');
-    // $speechRecognition.listen();
-    // $speechRecognition.onUtterance(function(utterance){
-    //   console.log(utterance); // buy a milk
-    // });
 
+    $speechRecognition.setLang('en-US');
+
+    $scope.stepFocus = 0;
+    $scope.opened = 0;
+
+    $scope.open = function() {
+      $scope.showModal = true;
+      $scope.opened ++
+      $speechRecognition.listen();
+      $speechRecognition.onUtterance(function(utterance){
+        console.log(utterance);
+        if(utterance === "next" || utterance === "next step"){
+          $scope.goForward()
+          $scope.$digest()
+        }else if(utterance === "previous" || utterance === "last step" || utterance === "last" || utterance === "previous step" || utterance === "back"){
+          $scope.goBack()
+          $scope.$digest()
+        }else{
+          $scope.$digest()
+        }
+      });
+    };
+
+    $scope.ok = function() {
+      $scope.showModal = false;
+      $speechRecognition.ignore();
+    };
+
+    $scope.goBack=function(){
+      $scope.stepFocus --
+    }
+
+    $scope.goForward=function(){
+      $scope.stepFocus ++
+      console.log($scope.stepFocus);
+    }
 
   }
 })();

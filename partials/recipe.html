@@ -9,19 +9,45 @@
       </p>
       <p>Serves: {{recipe.servings}}</p>
       <p>Ready in {{recipe.readyInMinutes}} minutes</p>
-      <ul>Ingredients:
+      <h4>Ingredients:</h4>
+      <ul>
         <li ng-model="ingredient" ng-repeat="ingredient in recipe.extendedIngredients" >
           {{ingredient.originalString}}
         </li>
       </ul>
-      <ol ng-show="areInstructions">Instructions
+      <h4>Instructions:</h4>
+      <ol ng-show="areInstructions">
         <li ng-repeat="instruction in instructions">{{instruction.step}}
           <br>
-          <div audios code="instruction.step"></div>
+          <!-- <div audios code="instruction.step"></div> -->
         </li>
       </ol>
     </article>
-    <img ng-src="{{recipe.image}}" class="col-md-3">
+    <div class="col-md-3">
+      <img ng-src="{{recipe.image}}" class="col-md-12">
+      <button ng-show="areInstructions" class="btn btn-lg" ng-click="open()">Cooking Mode</button>
+    </div>
   </div>
-  <button class="btn">Cooking Mode</button>
+
+  <!-- MODAL -->
+  <div class="row">
+    <div class="modal col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10" modal="showModal" close="cancel()">
+      <div class="modal-header">
+        <h4>{{recipe.title}}</h4>
+      </div>
+      <div class="modal-body">
+        <div ng-repeat="instruction in instructions">
+          <p ng-if="stepFocus === $index" class="current">{{$index+1}}. {{instruction.step}}</p>
+          <div ng-if="stepFocus === $index" audios code="instruction.step"></div>
+        </div>
+        <button class="btn btn-primary" ng-click="goBack()">Previous</button>
+        <button class="btn btn-primary" ng-click="goForward()">Next</button>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" ng-click="ok()">Okay</button>
+      </div>
+    </div>
+    </div>
+
 </section>

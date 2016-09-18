@@ -3,6 +3,7 @@
     .module('cookbookApp', [
     "ui.router",
     "cookbookApp.audios",
+    "ui.bootstrap.modal",
     "adaptive.speech"
   ])
 
