@@ -68,7 +68,7 @@ header{
       padding: 10px;
       font-size: 1.5em;
       width: 100%;
-      background-color: rgba(238, 238, 238, .8);
+      background-color: rgba(238, 238, 238, .85);
       margin-bottom: .5em;
       color: $darkbluegrey;
     }
@@ -84,7 +84,7 @@ header{
   text-shadow: none;
   border-radius: 5px;
   .checkboxes{
-    background-color: rgba(238, 238, 238, .8);
+    background-color: rgba(238, 238, 238, .85);
     width: 100%;
     fieldset{
       color: $darkbluegrey;
@@ -109,13 +109,57 @@ header{
   }
 }
 
+.recipe, .fridge, .results, .saved{
+  margin-bottom: 3vw;
+}
+
+.recipe{
+  .btn{
+    background-color: $green;
+    border-radius: 0;
+    border: none;
+    color: white;
+  }
+  .btn-lg{
+    margin-top: 1em;
+  }
+}
 .modal{
+  box-sizing: border-box;
   background-color: white;
-  height: 50%;
-  // max-height: 80%;
+  height: 70%;
   margin-top: 5vw;
   .current{
     font-weight: bold;
     font-size: 2.5em;
+  }
+}
+
+.fridge{
+  .list-group-item{
+    padding: .5em;
+    margin: 0;
+  }
+  button{
+    background-color: $green;
+    border-radius: 0;
+    border: none;
+    color: white;
+    font-size: 1.25em;
+  }
+  .delete{
+    background-color: $red;
+  }
+  .fridge-item{
+    font-size: 1.75em;
+  }
+  .search-fridge{
+    margin-top: 2vw;
+  }
+}
+
+.results{
+  li{
+    font-size: 1.75em;
   }
 }

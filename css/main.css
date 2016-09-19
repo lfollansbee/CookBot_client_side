@@ -58,7 +58,7 @@ header {
   padding: 10px;
   font-size: 1.5em;
   width: 100%;
-  background-color: rgba(238, 238, 238, 0.8);
+  background-color: rgba(238, 238, 238, 0.85);
   margin-bottom: .5em;
   color: #3e4055; }
 .forms p {
@@ -71,7 +71,7 @@ header {
   text-shadow: none;
   border-radius: 5px; }
   .advanced-search .checkboxes {
-    background-color: rgba(238, 238, 238, 0.8);
+    background-color: rgba(238, 238, 238, 0.85);
     width: 100%; }
     .advanced-search .checkboxes fieldset {
       color: #3e4055;
@@ -90,12 +90,43 @@ header {
     text-shadow: none;
     font-size: .5em; }
 
+.recipe, .fridge, .results, .saved {
+  margin-bottom: 3vw; }
+
+.recipe .btn {
+  background-color: #76b116;
+  border-radius: 0;
+  border: none;
+  color: white; }
+.recipe .btn-lg {
+  margin-top: 1em; }
+
 .modal {
+  box-sizing: border-box;
   background-color: white;
-  height: 50%;
+  height: 70%;
   margin-top: 5vw; }
   .modal .current {
     font-weight: bold;
     font-size: 2.5em; }
+
+.fridge .list-group-item {
+  padding: .5em;
+  margin: 0; }
+.fridge button {
+  background-color: #76b116;
+  border-radius: 0;
+  border: none;
+  color: white;
+  font-size: 1.25em; }
+.fridge .delete {
+  background-color: #db0000; }
+.fridge .fridge-item {
+  font-size: 1.75em; }
+.fridge .search-fridge {
+  margin-top: 2vw; }
+
+.results li {
+  font-size: 1.75em; }
 
 /*# sourceMappingURL=main.css.map */

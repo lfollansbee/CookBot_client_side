@@ -67,14 +67,16 @@
       $speechRecognition.listen();
       $speechRecognition.onUtterance(function(utterance){
         console.log(utterance);
-        if(utterance === "next" || utterance === "next step"){
+        if(utterance.includes("next")){
           $scope.goForward()
           $scope.$digest()
-        }else if(utterance === "previous" || utterance === "last step" || utterance === "last" || utterance === "previous step" || utterance === "back"){
+        }else if(utterance.includes("back") || utterance.includes("last") || utterance.includes("previous")){
           $scope.goBack()
           $scope.$digest()
-        }else{
+        }else if(utterance = "repeat"){
           $scope.$digest()
+        }else{
+          null
         }
       });
     };

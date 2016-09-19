@@ -1,27 +1,44 @@
 <section class="fridge container">
-  <h2>What's in my fridge?</h2>
+  <h2 class="text-center">What's in my fridge?</h2>
 
-  <form name="addItemForm" class="toDoApp" ng-submit="addItem(item)" action="javascript:void(0)" autocomplete="off">
-    <input name="itemName" type="text"
-    ng-model="item.itemName" required>
-    <input type="submit" value="Add" ng-class="{valid:addItemForm.item.itemName$valid}"
-    ng-disabled="addItemForm.$invalid">
-  </form>
-  <h3>All of Your Items</h3>
-  <ul ng-repeat="item in fridgeItems track by $index">
-    <li>{{item.itemName}}
-    <button class="edit" ng-click="toggleEditForm(item)">Edit this item</button>
-    <button class="delete" ng-click="deleteItem($index)">X</button>
-  </li>
-
-    <form name="editForm" ng-show="item.editFormShowing"
-    action="javascript:void(0)"
-    ng-submit="editItem($index, item)" autocomplete="off">
-      <input type="text" ng-model="item.itemName" value="{{item.itemName}}" required>
-      <input type="submit" value="Edit"
-      ng-class="{valid:editForm.item.itemName$valid}"
-      ng-disable="editForm.$invalid">
+  <div class="row forms">
+    <form name="addItemForm"
+    class="col-sm-offset-2 col-sm-8" ng-submit="addItem(item)"
+    action="javascript:void(0)" autocomplete="off">
+      <input name="itemName" type="text"
+      ng-model="item.itemName" required class="text-input">
+      <button class="btn" type="submit" ng-class="{valid:addItemForm.item.itemName$valid}"
+      ng-disabled="addItemForm.$invalid">Add</button>
     </form>
-  </ul>
-  <button ng-click="fridgeSearch()">Search for Recipes</button>
+  </div>
+
+  <div class="row">
+    <h3 class="text-center">Your Available Items</h3>
+    <ul class="col-sm-offset-2 col-sm-8"
+    ng-repeat="item in fridgeItems track by $index">
+      <li class="list-group-item">
+        <span class="fridge-item">{{item.itemName}}</span>
+        <button class="delete badge" ng-click="deleteItem($index)">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+        <button class="edit badge" ng-click="toggleEditForm(item)">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button>
+    </li>
+
+      <form name="editForm" ng-show="item.editFormShowing"
+      action="javascript:void(0)"
+      ng-submit="editItem($index, item)" autocomplete="off">
+        <input type="text" ng-model="item.itemName" value="{{item.itemName}}" required>
+        <input type="submit" value="Edit"
+        ng-class="{valid:editForm.item.itemName$valid}"
+        ng-disable="editForm.$invalid">
+      </form>
+    </ul>
+  </div>
+
+  <button class="btn search-fridge col-sm-offset-2 col-sm-8"
+  ng-class="{valid: fridgeItems.length > 0}"
+  ng-disabled="fridgeItems.length < 1"
+  ng-click="fridgeSearch()">Search for Recipes</button>
 </section>

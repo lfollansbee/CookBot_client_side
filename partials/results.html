@@ -3,9 +3,9 @@
   <h3 ng-show="fridgeItems">
     <span ng-repeat="item in fridgeItems">{{item.itemName}} </span>
   </h3>
-  <div ng-repeat="recipe in returnedRecipes">
+  <article ng-repeat="recipe in returnedRecipes">
     <a ui-sref="recipe({ id: recipe.id })">
-      <h5>{{recipe.title}}</h5>
+      <h4>{{recipe.title}}</h4>
     </a>
-  </div>
+  </article>
 </section>

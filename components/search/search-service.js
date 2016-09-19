@@ -28,7 +28,8 @@
         $http({
           method: 'GET',
           params:{
-            query: item
+            query: item,
+            number: 12
           },
           url: 'http://localhost:3000/search'
           // url: "https://cookbook-app.herokuapp.com/search"
@@ -48,7 +49,8 @@
           diet: null,
           cuisine: null,
           intolerances: null,
-          type:null
+          type:null,
+          numer: 12
         }
         if(checkedOptions[0].length > 0){
           params.diet = checkedOptions[0]
