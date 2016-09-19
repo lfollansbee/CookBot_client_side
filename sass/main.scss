@@ -114,6 +114,9 @@ header{
 }
 
 .recipe{
+  .label{
+    background-color: $green;
+  }
   .btn{
     background-color: $green;
     border-radius: 0;
@@ -122,6 +125,12 @@ header{
   }
   .btn-lg{
     margin-top: 1em;
+  }
+  .orange{
+    background-color: $orange;
+    &:hover{
+      background-color: $yellow;
+    }
   }
 }
 .modal{
