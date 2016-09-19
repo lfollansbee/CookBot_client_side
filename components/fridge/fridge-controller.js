@@ -7,7 +7,6 @@
   function FridgeController($scope, FridgeService){
     $scope.fridgeItems = FridgeService.getItems()
     $scope.itemNames = []
-    // $scope.fridge
 
     $scope.toggleEditForm = function(item){
       item.editFormShowing = !item.editFormShowing;
