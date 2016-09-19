@@ -13,7 +13,7 @@
       controller: RecipeController,
       controllerAs: "RecipeController",
       replace: true,
-      template: '<audio ng-src="{{url}}" controls></audio>',
+      template: '<audio ng-src="{{url}}" autoplay controls></audio>',
       link: function ($scope) {
           $scope.$watch('code', function (newVal, oldVal) {
              if (newVal !== undefined) {

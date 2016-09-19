@@ -11,7 +11,6 @@
     $scope.recipeId = $stateParams.id;
     $scope.areInstructions = true;
     $scope.sourceExists = false;
-    $scope.stepLength = 0
 
     $scope.checkInstructions = function(array){
       if (array.length === 0){
@@ -23,6 +22,11 @@
       if($scope.recipe.hasOwnProperty('sourceName')){
         $scope.sourceExists = true;
       }
+    }
+
+    $scope.firstStep = {
+      number: 0,
+      step: ""
     }
 
     $q.all([
@@ -43,11 +47,12 @@
         // url: 'https://cookbook-app.herokuapp.com/recipeInstructions/'
       })
     ]).then(function(response) {
-      // console.log(response);
       $scope.recipe = (response[0].data)
+
       $scope.checkSource($scope.recipe)
       if (response[1].data.length >= 1) {
         $scope.instructions = (response[1].data[0].steps)
+        $scope.instructions.unshift($scope.firstStep)
         $scope.checkInstructions($scope.instructions)
         console.log($scope.recipe, $scope.instructions)
       }else{
@@ -55,22 +60,18 @@
       }
     });
 
-
-    $speechRecognition.setLang('en-US');
-
     $scope.stepFocus = 0;
-    $scope.opened = 0;
+    $speechRecognition.setLang('en-US');
 
     $scope.open = function() {
       $scope.showModal = true;
-      $scope.opened ++
       $speechRecognition.listen();
       $speechRecognition.onUtterance(function(utterance){
         console.log(utterance);
         if(utterance.includes("next")){
           $scope.goForward()
           $scope.$digest()
-        }else if(utterance.includes("back") || utterance.includes("last") || utterance.includes("previous")){
+        }else if(utterance.includes("back") || utterance.includes("last") || utterance.includes("previous") || utterance ==="last"){
           $scope.goBack()
           $scope.$digest()
         }else if(utterance = "repeat"){
@@ -92,7 +93,7 @@
 
     $scope.goForward=function(){
       $scope.stepFocus ++
-      console.log($scope.stepFocus);
+      // console.log($scope.stepFocus);
     }
 
   }
