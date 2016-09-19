@@ -54,8 +54,8 @@
         params:{
           query: array
         },
-        url: 'http://localhost:3000/search/fridge'
-        // url: 'https://cookbook-app.herokuapp.com/fridge'
+        // url: 'http://localhost:3000/search/fridge'
+        url: 'https://cookbook-app.herokuapp.com/fridge'
       })
       .then(function(response){
         console.log(response.data);

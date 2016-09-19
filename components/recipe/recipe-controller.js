@@ -31,16 +31,16 @@
         params:{
           id: $scope.recipeId
         },
-        url: 'http://localhost:3000/recipeId/'
-        // url: 'https://cookbook-app.herokuapp.com/recipeId/'
+        // url: 'http://localhost:3000/recipeId/'
+        url: 'https://cookbook-app.herokuapp.com/recipeId/'
       }),
       $http({
         method: 'GET',
         params:{
           id: $scope.recipeId
         },
-        url: 'http://localhost:3000/recipeInstructions/'
-        // url: 'https://cookbook-app.herokuapp.com/recipeInstructions/'
+        // url: 'http://localhost:3000/recipeInstructions/'
+        url: 'https://cookbook-app.herokuapp.com/recipeInstructions/'
       })
     ]).then(function(response) {
       // console.log(response);
