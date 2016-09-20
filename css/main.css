@@ -122,6 +122,11 @@ header {
   background-color: #e06900; }
   .recipe .orange:hover {
     background-color: #ffdd47; }
+.recipe .red {
+  background-color: #db0000; }
+  .recipe .red:hover {
+    font-weight: bold;
+    color: black; }
 .recipe li {
   font-size: 1.2em; }
 .recipe h4 {

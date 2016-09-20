@@ -3,9 +3,9 @@
     .module("cookbookApp")
     .controller("SavedRecipeController", SavedRecipeController)
 
-  SavedRecipeController.$inject = ["$scope", "$stateParams", "$speechRecognition", "$speechSynthetis", "$speechCorrection", "$http"];
+  SavedRecipeController.$inject = ["$scope", "$stateParams", "$speechRecognition", "$speechSynthetis", "$speechCorrection", "$http", "SavedService"];
 
-  function SavedRecipeController($scope, $stateParams, $speechRecognition, $speechSynthetis, $speechCorrection, $http){
+  function SavedRecipeController($scope, $stateParams, $speechRecognition, $speechSynthetis, $speechCorrection, $http, SavedService){
     $scope.recipe = {}
     $scope.instructions = []
     $scope.areInstructions = true;
@@ -64,6 +64,8 @@
     $scope.goForward=function(){
       $scope.stepFocus ++
     }
+
+    $scope.deleteSaved = function(){SavedService.deleteSaved($scope.recipe.id)}
 
   }
 })();

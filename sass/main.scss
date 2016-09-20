@@ -91,6 +91,13 @@
       background-color: $yellow;
     }
   }
+  .red{
+    background-color: $red;
+    &:hover{
+      font-weight: bold;
+      color:black;
+    }
+  }
   li{
     font-size: 1.2em;
   }
