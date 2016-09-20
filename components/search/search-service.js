@@ -31,12 +31,11 @@
             query: item,
             number: 12
           },
-          url: 'http://localhost:3000/search'
-          // url: "https://cookbook-app.herokuapp.com/search"
+          // url: 'http://localhost:3000/search'
+          url: "https://cookbook-app.herokuapp.com/search"
         })
         .then(function(response){
           setResults(response.data.results);
-          // console.log(response.data.results);
           $location.path('/results/' + searchQuery)
         }, function(err){
           return err;
@@ -68,12 +67,11 @@
         $http({
           method: 'GET',
           params: params,
-          url: 'http://localhost:3000/search'
-          // url: "https://cookbook-app.herokuapp.com/search"
+          // url: 'http://localhost:3000/search'
+          url: "https://cookbook-app.herokuapp.com/search"
         })
         .then(function(response){
           setResults(response.data.results);
-          // console.log(response.data.results);
           $location.path('/results/' + params)
         }, function(err){
           return err;

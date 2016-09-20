@@ -18,8 +18,8 @@
           $scope.$watch('code', function (newVal, oldVal) {
              if (newVal !== undefined) {
                  $scope.url = $sce.trustAsResourceUrl(
-                   "http://localhost:3000/speech/"
-                  //  "https://cookbook-app.herokuapp.com/speech/"
+                  //  "http://localhost:3000/speech/"
+                   "https://cookbook-app.herokuapp.com/speech/"
                    + newVal);
              }
           });
@@ -34,5 +34,3 @@
   }
 
 })()
-
- // "http://stackoverflow.com/questions/23659395/can-i-use-angular-variables-as-the-source-of-an-audio-tag"

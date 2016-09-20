@@ -22,11 +22,11 @@
 
     $http({
       method: 'GET',
-      url: 'http://localhost:3000/saved/' + $stateParams.id
-      // url: 'https://cookbook-app.herokuapp.com/saved/' + $stateParams.id
+      // url: 'http://localhost:3000/saved/' + $stateParams.id
+      url: 'https://cookbook-app.herokuapp.com/saved/' + $stateParams.id
     })
     .then(function(response) {
-      console.log(response.data);
+      // console.log(response.data);
       $scope.recipe = response.data;
       if ($scope.recipe.extendedInstructions !== null && $scope.recipe.extendedInstructions.length >= 1) {
         $scope.instructions = $scope.recipe.extendedInstructions;

@@ -36,16 +36,16 @@
         params:{
           id: $scope.recipeId
         },
-        url: 'http://localhost:3000/recipeId/'
-        // url: 'https://cookbook-app.herokuapp.com/recipeId/'
+        // url: 'http://localhost:3000/recipeId/'
+        url: 'https://cookbook-app.herokuapp.com/recipeId/'
       }),
       $http({
         method: 'GET',
         params:{
           id: $scope.recipeId
         },
-        url: 'http://localhost:3000/recipeInstructions/'
-        // url: 'https://cookbook-app.herokuapp.com/recipeInstructions/'
+        // url: 'http://localhost:3000/recipeInstructions/'
+        url: 'https://cookbook-app.herokuapp.com/recipeInstructions/'
       })
     ]).then(function(response) {
       $scope.recipe = (response[0].data)
@@ -54,7 +54,7 @@
         $scope.instructions = (response[1].data[0].steps)
         $scope.instructions.unshift($scope.firstStep)
         $scope.checkInstructions($scope.instructions)
-        console.log($scope.recipe, $scope.instructions)
+        // console.log($scope.recipe, $scope.instructions)
       }else{
         $scope.areInstructions = false;
       }
@@ -93,12 +93,10 @@
 
     $scope.goForward=function(){
       $scope.stepFocus ++
-      console.log($scope.stepFocus);
     }
 
     $scope.saveRecipe = function(){
       $scope.saved = true;
-      // console.log($scope.saved);
       RecipeService.saveRecipe($scope.recipe)
       if ($scope.areInstructions){
         RecipeService.saveInstructions($scope.instructions)

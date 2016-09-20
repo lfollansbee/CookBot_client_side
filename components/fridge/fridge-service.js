@@ -54,11 +54,11 @@
         params:{
           query: array
         },
-        url: 'http://localhost:3000/search/fridge'
-        // url: 'https://cookbook-app.herokuapp.com/search/fridge'
+        // url: 'http://localhost:3000/search/fridge'
+        url: 'https://cookbook-app.herokuapp.com/search/fridge'
       })
       .then(function(response){
-        console.log(response.data);
+        // console.log(response.data);
         setResults(response.data);
         $location.path('/fridge-results' )
       }, function(err){

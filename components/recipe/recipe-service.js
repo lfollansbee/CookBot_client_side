@@ -18,11 +18,10 @@
         params:{
           id: thisRecipe
         },
-        url: 'http://localhost:3000/saved/add'
-        // url: 'https://cookbook-app.herokuapp.com/saved/add'
+        // url: 'http://localhost:3000/saved/add'
+        url: 'https://cookbook-app.herokuapp.com/saved/add'
       })
       .then(function(response){
-        // console.log(response.data);
       }, function(err){
         return err;
       });
@@ -35,11 +34,10 @@
           id: array,
           originalID: $stateParams
         },
-        url: 'http://localhost:3000/saved/addInstructions'
-        // url: 'https://cookbook-app.herokuapp.com/saved/addInstructions'
+        // url: 'http://localhost:3000/saved/addInstructions'
+        url: 'https://cookbook-app.herokuapp.com/saved/addInstructions'
       })
       .then(function(response){
-        // console.log(response.data);
       }, function(err){
         return err;
       });

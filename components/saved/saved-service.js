@@ -12,14 +12,12 @@
     };
 
     function deleteSaved(){
-      // console.log($stateParams);
       $http({
         method: 'GET',
-        url: 'http://localhost:3000/saved/delete/' + $stateParams.id
-        // url: 'https://cookbook-app.herokuapp.com/saved/delete/' + $stateParams.id
+        // url: 'http://localhost:3000/saved/delete/' + $stateParams.id
+        url: 'https://cookbook-app.herokuapp.com/saved/delete/' + $stateParams.id
       })
       .then(function(response){
-        // console.log(response.data);
         $location.path("/saved")
       }, function(err){
         return err;
@@ -32,11 +30,10 @@
         params: {
           query: note
         },
-        url: 'http://localhost:3000/saved/add-note/' + $stateParams.id
-        // url: 'https://cookbook-app.herokuapp.com/saved/add-note/' + $stateParams.id
+        // url: 'http://localhost:3000/saved/add-note/' + $stateParams.id
+        url: 'https://cookbook-app.herokuapp.com/saved/add-note/' + $stateParams.id
       })
       .then(function(response){
-        // console.log(response.data);
         $location.path("/saved")
       }, function(err){
         return err;
