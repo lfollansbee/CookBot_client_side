@@ -14,33 +14,38 @@
     $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: 'partials/home.html',
+        templateUrl: 'templates/home.html',
         controller: 'SearchController'
       })
       .state('results', {
         url: '/results/:id',
-        templateUrl: 'partials/results.html',
+        templateUrl: 'templates/results.html',
         controller: 'ResultsController'
       })
       .state('recipe', {
         url: '/recipe/:id',
-        templateUrl: 'partials/recipe.html',
+        templateUrl: 'templates/recipe.html',
         controller: 'RecipeController'
       })
       .state('fridge', {
         url: '/fridge',
-        templateUrl: 'partials/fridge.html',
+        templateUrl: 'templates/fridge.html',
         controller: 'FridgeController'
       })
       .state('fridge-results', {
           url: '/fridge-results',
-          templateUrl: 'partials/results.html',
+          templateUrl: 'templates/results.html',
           controller: 'FridgeResultsController'
       })
       .state('saved', {
           url: '/saved',
-          templateUrl: 'partials/saved.html',
+          templateUrl: 'templates/saved.html',
           controller: 'SavedController'
+      })
+      .state('saved-recipe', {
+          url: '/saved/recipe/:id',
+          templateUrl: 'templates/saved-recipe.html',
+          controller: 'SavedRecipeController'
       })
   });
 })();

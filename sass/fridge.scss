@@ -1,0 +1,22 @@
+.fridge{
+  .list-group-item{
+    padding: .5em;
+    margin: 0;
+  }
+  button{
+    background-color: $green;
+    border-radius: 0;
+    border: none;
+    color: white;
+    font-size: 1.25em;
+  }
+  .delete{
+    background-color: $red;
+  }
+  .fridge-item{
+    font-size: 1.75em;
+  }
+  .search-fridge{
+    margin-top: 2vw;
+  }
+}

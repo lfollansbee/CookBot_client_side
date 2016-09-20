@@ -1,8 +1,8 @@
 <section class="saved container">
   <h2>Saved Recipes</h2>
   <div ng-repeat="recipe in recipes">
-    <a ui-sref="recipe({ id: recipe.id })">
-      <h5>{{recipe.title}}</h5>
+    <a ui-sref="saved-recipe({id: recipe.dbID})">
+      <h4>{{recipe.title}}</h4>
     </a>
   </div>
   <button class="btn">Add Recipe</button>

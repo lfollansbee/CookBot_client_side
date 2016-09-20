@@ -3,14 +3,15 @@
     .module("cookbookApp")
     .controller("RecipeController", RecipeController)
 
-  RecipeController.$inject = ["$scope", "$http", "$stateParams", "$q", "$speechRecognition", "$speechSynthetis", "$speechCorrection"];
+  RecipeController.$inject = ["$scope", "$http", "$stateParams", "$q", "$speechRecognition", "$speechSynthetis", "$speechCorrection", "RecipeService"];
 
-  function RecipeController($scope, $http, $stateParams, $q, $speechRecognition, $speechSynthetis, $speechCorrection){
+  function RecipeController($scope, $http, $stateParams, $q, $speechRecognition, $speechSynthetis, $speechCorrection, RecipeService){
     $scope.recipe = {}
     $scope.instructions = [];
     $scope.recipeId = $stateParams.id;
     $scope.areInstructions = true;
     $scope.sourceExists = false;
+    $scope.saved = false;
 
     $scope.checkInstructions = function(array){
       if (array.length === 0){
@@ -94,6 +95,13 @@
     $scope.goForward=function(){
       $scope.stepFocus ++
       // console.log($scope.stepFocus);
+    }
+
+    $scope.saveRecipe = function(){
+      $scope.saved = true;
+      console.log($scope.saved);
+      RecipeService.saveRecipe($scope.recipe)
+      RecipeService.saveInstructions($scope.instructions)
     }
 
   }

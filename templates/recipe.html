@@ -1,0 +1,68 @@
+<section class="recipe container">
+  <h2>{{recipe.title}}</h2>
+  <div class="row">
+    <article class="col-md-8">
+      <p>Source:
+        <a ng-href={{recipe.sourceUrl}} target="_blank">{{recipe.sourceName}}
+          <span ng-hide="sourceExists">{{recipe.sourceUrl}}</span>
+        </a>
+      </p>
+      <p>Serves: {{recipe.servings}}</p>
+      <p>Ready in {{recipe.readyInMinutes}} minutes</p>
+      <p ng-show="recipe.vegetarian"><span class="label">Vegetarian</span>
+      <span ng-show="recipe.vegan" class="label">Vegan</span>
+      <span ng-show="recipe.glutenFree" class="label">Gluten Free</span>
+      <span ng-show="recipe.dairyFree"class="label">Dairy Free</span></p>
+
+      <h4>Ingredients:</h4>
+      <ul>
+        <li ng-model="ingredient" ng-repeat="ingredient in recipe.extendedIngredients" >
+          {{ingredient.originalString}}
+        </li>
+      </ul>
+
+      <h4>Instructions:</h4>
+      <ol ng-show="areInstructions">
+        <li ng-repeat="instruction in instructions" ng-if="$index >= 1">{{instruction.step}}
+        </li>
+      </ol>
+      <button class="btn btn-lg orange" ng-click="saveRecipe()">
+        <i class="fa fa-heart" aria-hidden="true">
+        </i> Save Recipe
+      </button>
+    </article> <!-- LEFT COLUMN -->
+
+    <div class="col-md-4">
+      <img ng-src="{{recipe.image}}" class="col-md-12">
+      <button ng-show="areInstructions" class="btn btn-lg col-md-12" ng-click="open()">Cooking Mode</button>
+    </div> <!-- RIGHT COLUMN -->
+  </div> <!-- ROW -->
+
+  <!-- MODAL -->
+  <div class="row">
+    <div class="modal col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10" modal="showModal" close="cancel()">
+      <div class="modal-header">
+        <h3>{{recipe.title}}</h3>
+      </div>
+      <div class="modal-body row">
+        <div ng-if="stepFocus <= 0">
+          <p class="cooking-mode">Cooking Mode includes read aloud step-by-step recipe instructions and recognizes voice commands to navigate through those instructions. Simply say aloud "next" or "last" to move between steps or use the "Next" and "Previous" buttons.</p>
+        </div>
+        <div ng-repeat="instruction in instructions">
+
+          <!-- IF IT IS NOT THE FIRST PAGE -->
+          <p ng-if="stepFocus === $index && $index >= 1" class="current">{{$index}}. {{instruction.step}}</p>
+          <div ng-if="stepFocus === $index && $index >= 1" audios code="instruction.step"></div>
+        </div> <!-- NG-REPEAT -->
+
+        <button class="btn btn-lg" ng-click="goBack()">Previous</button>
+        <button class="btn btn-lg" ng-click="goForward()">Next</button>
+
+      </div> <!-- MODAL-BODY -->
+      <div class="modal-footer">
+        <button class="btn btn-lg" ng-click="ok()">Okay</button>
+      </div> <!-- MODAL FOOTER -->
+    </div> <!-- MODAL -->
+  </div> <!-- ROW -->
+
+</section>

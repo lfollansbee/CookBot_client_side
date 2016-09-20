@@ -39,6 +39,22 @@ header {
             color: #db0000;
             text-decoration: none; }
 
+.fridge .list-group-item {
+  padding: .5em;
+  margin: 0; }
+.fridge button {
+  background-color: #76b116;
+  border-radius: 0;
+  border: none;
+  color: white;
+  font-size: 1.25em; }
+.fridge .delete {
+  background-color: #db0000; }
+.fridge .fridge-item {
+  font-size: 1.75em; }
+.fridge .search-fridge {
+  margin-top: 2vw; }
+
 .home .jumbotron {
   background-image: url(../images/cooking-header.jpeg);
   background-repeat: no-repeat;
@@ -63,7 +79,7 @@ header {
   color: #3e4055; }
 .forms p {
   text-shadow: 2px 2px 4px #000000;
-  font-size: 1.25em;
+  font-size: 1.5em;
   margin-bottom: 1em; }
 
 .advanced-search {
@@ -106,6 +122,11 @@ header {
   background-color: #e06900; }
   .recipe .orange:hover {
     background-color: #ffdd47; }
+.recipe li {
+  font-size: 1.2em; }
+.recipe h4 {
+  font-size: 1.5em;
+  text-decoration: underline; }
 
 .modal {
   box-sizing: border-box;
@@ -115,24 +136,10 @@ header {
   .modal .current {
     font-weight: bold;
     font-size: 2.5em; }
-
-.fridge .list-group-item {
-  padding: .5em;
-  margin: 0; }
-.fridge button {
-  background-color: #76b116;
-  border-radius: 0;
-  border: none;
-  color: white;
-  font-size: 1.25em; }
-.fridge .delete {
-  background-color: #db0000; }
-.fridge .fridge-item {
-  font-size: 1.75em; }
-.fridge .search-fridge {
-  margin-top: 2vw; }
-
-.results li {
-  font-size: 1.75em; }
+  .modal .cooking-mode {
+    font-size: 1.5em; }
+    .modal .cooking-mode b {
+      font-weight: bold;
+      text-decoration: underline; }
 
 /*# sourceMappingURL=main.css.map */
