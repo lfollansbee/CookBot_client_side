@@ -49,7 +49,6 @@
       })
     ]).then(function(response) {
       $scope.recipe = (response[0].data)
-
       $scope.checkSource($scope.recipe)
       if (response[1].data.length >= 1) {
         $scope.instructions = (response[1].data[0].steps)
@@ -94,7 +93,6 @@
 
     $scope.goForward=function(){
       $scope.stepFocus ++
-      // console.log($scope.stepFocus);
     }
 
     $scope.saveRecipe = function(){

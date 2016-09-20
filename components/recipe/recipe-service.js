@@ -22,7 +22,7 @@
         // url: 'https://cookbook-app.herokuapp.com/saved/add'
       })
       .then(function(response){
-        console.log(response.data);
+        // console.log(response.data);
       }, function(err){
         return err;
       });
@@ -32,13 +32,14 @@
       $http({
         method: 'POST',
         params:{
-          id: array
+          id: array,
+          originalID: $stateParams
         },
         url: 'http://localhost:3000/saved/addInstructions'
-        // url: 'https://cookbook-app.herokuapp.com/saved/add'
+        // url: 'https://cookbook-app.herokuapp.com/saved/addInstructions'
       })
       .then(function(response){
-        console.log(response.data);
+        // console.log(response.data);
       }, function(err){
         return err;
       });
