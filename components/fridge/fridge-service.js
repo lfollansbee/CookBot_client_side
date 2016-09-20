@@ -55,7 +55,7 @@
           query: array
         },
         // url: 'http://localhost:3000/search/fridge'
-        url: 'https://cookbook-app.herokuapp.com/fridge'
+        url: 'https://cookbook-app.herokuapp.com/search/fridge'
       })
       .then(function(response){
         console.log(response.data);

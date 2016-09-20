@@ -19,7 +19,7 @@
              if (newVal !== undefined) {
                  $scope.url = $sce.trustAsResourceUrl(
                   //  "http://localhost:3000/speech/"
-                   "https://cookbook-app.herokuapp.com/speech"
+                   "https://cookbook-app.herokuapp.com/speech/"
                    + newVal);
              }
           });
