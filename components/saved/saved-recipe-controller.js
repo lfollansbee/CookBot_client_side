@@ -16,8 +16,8 @@
 
     $http({
       method: 'GET',
-      url: 'http://localhost:3000/saved/' + $stateParams.id
-      // url: 'https://cookbook-app.herokuapp.com/saved/'
+      // url: 'http://localhost:3000/saved/' + $stateParams.id
+      url: 'https://cookbook-app.herokuapp.com/saved/' + $stateParams.id
     })
     .then(function(response) {
       console.log(response.data);
