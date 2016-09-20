@@ -72,7 +72,7 @@ header {
     width: 100%; }
     .advanced-search .checkboxes fieldset {
       color: #3e4055;
-      padding: 0 0 0 .5em;
+      padding: 0 2em 0 2em;
       border: none;
       border-radius: 5px; }
       .advanced-search .checkboxes fieldset ul {
@@ -86,6 +86,16 @@ header {
     padding: 2px;
     text-shadow: none;
     font-size: .5em; }
+  .advanced-search .submit {
+    padding-bottom: 1em; }
+    .advanced-search .submit .btn {
+      color: rgba(238, 238, 238, 0.85);
+      background-color: #e06900;
+      border-radius: 0;
+      border: none;
+      margin-top: 1em;
+      font-size: 1em;
+      margin-top: 0 0 1em 0; }
 
 .home .jumbotron {
   background-image: url(../images/cooking-header.jpeg);
@@ -144,15 +154,16 @@ header {
     margin-top: 0; }
 
 .modal {
-  box-sizing: border-box;
   background-color: white;
-  height: 70%;
-  margin-top: 5vw; }
+  margin-top: 5vw;
+  height: 65%; }
+  .modal .modal-header {
+    width: 100%; }
   .modal .current {
     font-weight: bold;
-    font-size: 2.5em; }
+    font-size: 3rem; }
   .modal .cooking-mode {
-    font-size: 1.5em; }
+    font-size: 2em; }
     .modal .cooking-mode b {
       font-weight: bold;
       text-decoration: underline; }

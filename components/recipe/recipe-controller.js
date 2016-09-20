@@ -93,6 +93,7 @@
 
     $scope.goForward=function(){
       $scope.stepFocus ++
+      console.log($scope.stepFocus);
     }
 
     $scope.saveRecipe = function(){

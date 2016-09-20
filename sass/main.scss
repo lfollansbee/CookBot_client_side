@@ -76,23 +76,27 @@
     }
   }
 }
+
 .modal{
-  box-sizing: border-box;
   background-color: white;
-  height: 70%;
   margin-top: 5vw;
+  height: 65%;
+  .modal-header{
+    width: 100%;
+  }
   .current{
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 3rem;
   }
   .cooking-mode{
-    font-size: 1.5em;
+    font-size: 2em;
     b{
       font-weight: bold;
       text-decoration: underline;
     }
   }
 }
+
 
 .saved{
   .btn{

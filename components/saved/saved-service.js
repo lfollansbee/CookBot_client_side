@@ -19,7 +19,7 @@
         // url: 'https://cookbook-app.herokuapp.com/saved/delete/' + $stateParams.id
       })
       .then(function(response){
-        console.log(response.data);
+        // console.log(response.data);
         $location.path("/saved")
       }, function(err){
         return err;
@@ -36,7 +36,7 @@
         // url: 'https://cookbook-app.herokuapp.com/saved/add-note/' + $stateParams.id
       })
       .then(function(response){
-        console.log(response.data);
+        // console.log(response.data);
         $location.path("/saved")
       }, function(err){
         return err;
