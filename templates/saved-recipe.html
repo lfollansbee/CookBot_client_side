@@ -27,12 +27,31 @@
         <li ng-repeat="instruction in instructions" ng-if="$index >= 1">{{instruction}}
         </li>
       </ol>
+
+      <div ng-if="recipe.notes" class="well notes">
+        <h3>Recipe Notes</h3>
+        <p>{{recipe.notes}}</p>
+      </div>
+
     </article> <!-- LEFT COLUMN -->
 
     <div class="col-md-4">
       <img ng-src="{{recipe.image}}" class="col-md-12">
       <button ng-show="areInstructions" class="btn btn-lg col-md-12" ng-click="open()">Cooking Mode</button>
-      <button class="btn btn-lg col-md-12 orange"><i class="fa fa-pencil" aria-hidden="true"></i> Add a Note</button>
+
+      <button class="btn btn-lg col-md-12 orange" ng-click="showNote = !showNote"><i class="fa fa-pencil" aria-hidden="true"></i> Add a Note</button>
+
+      <div class="well col-md-12" ng-show="showNote">
+        <p>Add/edit notes for this recipe.</p>
+        <form name="add-note" ng-submit="addNote(note)" action="javascript:void(0)" method="post" autocomplete="off">
+          <textarea class="text-input col-md-12" rows=5 ng-model="note" placeholder="{{recipe.notes}}">
+          </textarea>
+          <button class="btn orange" type="submit">
+            <i class="fa fa-plus" aria-hidden="true"></i>  Add
+          </button>
+        </form>
+      </div> <!-- add note -->
+
       <button class="btn btn-lg col-md-12 red" ng-click="deleteSaved()"><i class="fa fa-trash" aria-hidden="true"></i> Remove from Saved</button>
     </div> <!-- RIGHT COLUMN -->
   </div> <!-- ROW -->

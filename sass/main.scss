@@ -49,19 +49,10 @@
     background-color: $green;
   }
   .btn{
-    background-color: $green;
-    border-radius: 0;
-    border: none;
-    color: white;
-  }
-  .btn-lg{
-    margin-top: 1em;
+    @include button(white, $green);
   }
   .orange{
     background-color: $orange;
-    &:hover{
-      background-color: $yellow;
-    }
   }
   .red{
     background-color: $red;
@@ -76,6 +67,13 @@
   h4{
     font-size: 1.5em;
     text-decoration: underline;
+  }
+  .notes{
+    font-size: 1.25em;
+    margin-top: 1em;
+    h3{
+      margin-top: 0;
+    }
   }
 }
 .modal{
@@ -93,5 +91,22 @@
       font-weight: bold;
       text-decoration: underline;
     }
+  }
+}
+
+.saved{
+  .btn{
+    @include button(white, $green);
+  }
+  p{
+    font-size: 1.25em;
+    margin-bottom: 1em;
+  }
+  .text-input{
+    padding: 5px;
+    font-size: 1em;
+    width: 100%;
+    margin-bottom: .5em;
+    color: $darkbluegrey;
   }
 }

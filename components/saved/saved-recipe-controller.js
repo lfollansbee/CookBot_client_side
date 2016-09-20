@@ -72,7 +72,13 @@
       $scope.stepFocus ++
     }
 
-    $scope.deleteSaved = function(){SavedService.deleteSaved($scope.recipe.id)}
+    $scope.deleteSaved = function(){
+      SavedService.deleteSaved($scope.recipe.id)
+    }
+
+    $scope.addNote = function(note){
+      SavedService.addNote(note)
+    }
 
   }
 })();

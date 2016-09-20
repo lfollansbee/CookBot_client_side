@@ -9,19 +9,23 @@ h1 {
 * {
   box-sizing: border-box; }
 
+.link, header a, header nav ul li a {
+  text-decoration: none;
+  color: currentColor; }
+  .link:hover, header a:hover {
+    color: currentColor;
+    text-decoration: none; }
+  .link:focus, header a:focus {
+    color: currentColor;
+    text-decoration: none; }
+
 header {
   color: #e06900; }
   header h1 {
     font-size: 5em;
     margin-bottom: .5em; }
-  header a {
-    text-decoration: none;
-    color: currentColor; }
-    header a:hover {
-      color: currentColor;
-      text-decoration: none; }
   header nav {
-    border-top: grey solid 1px; }
+    border-top: #3e4055 solid 1px; }
     header nav ul {
       display: flex;
       justify-content: space-around;
@@ -32,28 +36,32 @@ header {
         font-size: 1.25em;
         text-transform: uppercase;
         font-weight: bold; }
-        header nav ul li a {
-          text-decoration: none;
-          color: currentColor; }
-          header nav ul li a:hover {
-            color: #db0000;
-            text-decoration: none; }
+        header nav ul li a:hover {
+          color: #db0000; }
 
 .fridge .list-group-item {
   padding: .5em;
   margin: 0; }
 .fridge button {
+  color: white;
   background-color: #76b116;
   border-radius: 0;
   border: none;
-  color: white;
+  margin-top: 1em;
   font-size: 1.25em; }
 .fridge .delete {
-  background-color: #db0000; }
+  background-color: #db0000;
+  margin-top: 0; }
+.fridge .edit {
+  margin-top: 0; }
 .fridge .fridge-item {
   font-size: 1.75em; }
 .fridge .search-fridge {
-  margin-top: 2vw; }
+  margin-top: 2vw;
+  padding: 15px 0;
+  font-size: 1.5em; }
+  .fridge .search-fridge:hover {
+    color: #3e4055; }
 
 .advanced-search {
   padding: .5rem;
@@ -112,16 +120,13 @@ header {
 .recipe .label {
   background-color: #76b116; }
 .recipe .btn {
+  color: white;
   background-color: #76b116;
   border-radius: 0;
   border: none;
-  color: white; }
-.recipe .btn-lg {
   margin-top: 1em; }
 .recipe .orange {
   background-color: #e06900; }
-  .recipe .orange:hover {
-    background-color: #ffdd47; }
 .recipe .red {
   background-color: #db0000; }
   .recipe .red:hover {
@@ -132,6 +137,11 @@ header {
 .recipe h4 {
   font-size: 1.5em;
   text-decoration: underline; }
+.recipe .notes {
+  font-size: 1.25em;
+  margin-top: 1em; }
+  .recipe .notes h3 {
+    margin-top: 0; }
 
 .modal {
   box-sizing: border-box;
@@ -146,5 +156,21 @@ header {
     .modal .cooking-mode b {
       font-weight: bold;
       text-decoration: underline; }
+
+.saved .btn {
+  color: white;
+  background-color: #76b116;
+  border-radius: 0;
+  border: none;
+  margin-top: 1em; }
+.saved p {
+  font-size: 1.25em;
+  margin-bottom: 1em; }
+.saved .text-input {
+  padding: 5px;
+  font-size: 1em;
+  width: 100%;
+  margin-bottom: .5em;
+  color: #3e4055; }
 
 /*# sourceMappingURL=main.css.map */

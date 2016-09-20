@@ -3,9 +3,9 @@
     .module("cookbookApp")
     .controller("SavedController", SavedController)
 
-  SavedController.$inject = ["$scope", "$http", "$stateParams"];
+  SavedController.$inject = ["$scope", "$http", "SavedService"];
 
-  function SavedController($scope, $http, $stateParams){
+  function SavedController($scope, $http, SavedService){
     $scope.recipes = []
 
     $http({

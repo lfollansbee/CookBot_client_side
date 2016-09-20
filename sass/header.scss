@@ -2,6 +2,19 @@
   box-sizing: border-box;
 }
 
+.link{
+  text-decoration: none;
+  color: currentColor;
+  &:hover{
+    color: currentColor;
+    text-decoration: none;
+  }
+  &:focus{
+    color: currentColor;
+    text-decoration: none;
+  }
+}
+
 header{
   color: $orange;
   h1{
@@ -9,15 +22,10 @@ header{
     margin-bottom: .5em;
   }
   a{
-    text-decoration: none;
-    color: currentColor;
-    &:hover{
-      color: currentColor;
-      text-decoration: none;
-    }
+    @extend .link;
   }
   nav{
-    border-top: grey solid 1px;
+    border-top: $darkbluegrey solid 1px;
     ul{
       display: flex;
       justify-content: space-around;
@@ -29,11 +37,9 @@ header{
         text-transform: uppercase;
         font-weight: bold;
         a{
-          text-decoration: none;
-          color: currentColor;
+          @extend .link;
           &:hover{
             color: $red;
-            text-decoration: none;
           }
         }
       }

@@ -1,9 +1,23 @@
 <section class="saved container">
   <h2>Saved Recipes</h2>
-  <div ng-repeat="recipe in recipes">
-    <a ui-sref="saved-recipe({id: recipe.dbID})">
-      <h4>{{recipe.title}}</h4>
-    </a>
+  <div class="row">
+    <article class="col-md-6">
+      <div ng-repeat="recipe in recipes">
+        <a ui-sref="saved-recipe({id: recipe.dbID})">
+          <h4>{{recipe.title}}</h4>
+        </a>
+      </div>
+      <!-- <button class="btn btn-lg" ng-click="addRecipe = !addRecipe">Add Recipe</button> -->
+    </article>
+
+  <article class="col-md-6 well" ng-show="addRecipe">
+    <!-- <h3>Add Recipe</h3>
+    <form name="add-recipe" ng-submit="add(url)" action="javascript:void(0)" method="post" autocomplete="off">
+      <label for="url">Recipe URL</label>
+      <input class="text-input" type="text" id="url" ng-model="url">
+      <button class="btn" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>  Add</button>
+    </form>
+  </article> -->
+
   </div>
-  <!-- <button class="btn">Add Recipe</button> -->
 </section>

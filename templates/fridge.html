@@ -24,7 +24,7 @@
         <button class="edit badge" ng-click="toggleEditForm(item)">
         <i class="fa fa-pencil" aria-hidden="true"></i>
         </button>
-    </li>
+      </li>
 
       <form name="editForm" ng-show="item.editFormShowing"
       action="javascript:void(0)"
@@ -35,9 +35,9 @@
         ng-disable="editForm.$invalid">
       </form>
     </ul>
-  </div>
+  </div> <!-- row -->
 
-  <button class="btn search-fridge col-sm-offset-2 col-sm-8"
+  <button class="btn btn-lg search-fridge col-sm-offset-2 col-sm-8"
   ng-class="{valid: fridgeItems.length > 0}"
   ng-disabled="fridgeItems.length < 1"
   ng-click="fridgeSearch()">Search for Recipes</button>
