@@ -31,8 +31,8 @@
             query: item,
             number: 12
           },
-          // url: 'http://localhost:3000/search'
-          url: "https://cookbook-app.herokuapp.com/search"
+          url: 'http://localhost:3000/search'
+          // url: "https://cookbook-app.herokuapp.com/search"
         })
         .then(function(response){
           setResults(response.data.results);
@@ -68,8 +68,8 @@
         $http({
           method: 'GET',
           params: params,
-          // url: 'http://localhost:3000/search'
-          url: "https://cookbook-app.herokuapp.com/search"
+          url: 'http://localhost:3000/search'
+          // url: "https://cookbook-app.herokuapp.com/search"
         })
         .then(function(response){
           setResults(response.data.results);

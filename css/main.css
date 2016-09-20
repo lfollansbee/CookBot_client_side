@@ -55,6 +55,30 @@ header {
 .fridge .search-fridge {
   margin-top: 2vw; }
 
+.advanced-search {
+  padding: .5rem;
+  text-shadow: none;
+  border-radius: 5px; }
+  .advanced-search .checkboxes {
+    background-color: rgba(238, 238, 238, 0.85);
+    width: 100%; }
+    .advanced-search .checkboxes fieldset {
+      color: #3e4055;
+      padding: 0 0 0 .5em;
+      border: none;
+      border-radius: 5px; }
+      .advanced-search .checkboxes fieldset ul {
+        list-style: none;
+        padding-left: 0;
+        font-size: .75em; }
+      .advanced-search .checkboxes fieldset legend {
+        font-size: 1em;
+        margin: 0; }
+  .advanced-search .checkbox {
+    padding: 2px;
+    text-shadow: none;
+    font-size: .5em; }
+
 .home .jumbotron {
   background-image: url(../images/cooking-header.jpeg);
   background-repeat: no-repeat;
@@ -81,30 +105,6 @@ header {
   text-shadow: 2px 2px 4px #000000;
   font-size: 1.5em;
   margin-bottom: 1em; }
-
-.advanced-search {
-  padding: .5rem;
-  text-shadow: none;
-  border-radius: 5px; }
-  .advanced-search .checkboxes {
-    background-color: rgba(238, 238, 238, 0.85);
-    width: 100%; }
-    .advanced-search .checkboxes fieldset {
-      color: #3e4055;
-      padding: 0 0 0 .5em;
-      border: none;
-      border-radius: 5px; }
-      .advanced-search .checkboxes fieldset ul {
-        list-style: none;
-        padding-left: 0;
-        font-size: .75em; }
-      .advanced-search .checkboxes fieldset legend {
-        font-size: 1em;
-        margin: 0; }
-  .advanced-search .checkbox {
-    padding: 2px;
-    text-shadow: none;
-    font-size: .5em; }
 
 .recipe, .fridge, .results, .saved {
   margin-bottom: 3vw; }

@@ -22,7 +22,7 @@
         </li>
       </ul>
 
-      <h4>Instructions:</h4>
+      <h4 ng-show="areInstructions">Instructions:</h4>
       <ol ng-show="areInstructions">
         <li ng-repeat="instruction in instructions" ng-if="$index >= 1">{{instruction}}
         </li>
