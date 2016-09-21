@@ -11,6 +11,7 @@
     $scope.areInstructions = true;
     $scope.sourceExists = false;
     $scope.saved = true;
+    $scope.notes = [];
 
     $scope.firstStep = ""
 
@@ -22,12 +23,11 @@
 
     $http({
       method: 'GET',
-      url: 'http://localhost:3000/saved/' + $stateParams.id
-      // url: 'https://cookbook-app.herokuapp.com/saved/' + $stateParams.id
+      // url: 'http://localhost:3000/saved/' + $stateParams.id
+      url: 'https://cookbook-app.herokuapp.com/saved/' + $stateParams.id
     })
     .then(function(response) {
-      console.log(response.data);
-      $scope.recipe = response.data;
+      $scope.recipe = response.data[0];
       if ($scope.recipe.extendedInstructions !== null && $scope.recipe.extendedInstructions.length >= 1) {
         $scope.instructions = $scope.recipe.extendedInstructions;
         $scope.instructions.unshift($scope.firstStep)
@@ -35,6 +35,7 @@
       }else{
         $scope.areInstructions = false;
       }
+      $scope.notes = response.data[1]
     });
 
     $scope.stepFocus = 0;
