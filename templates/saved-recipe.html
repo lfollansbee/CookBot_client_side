@@ -28,9 +28,13 @@
         </li>
       </ol>
 
-      <div ng-if="notes.length >= 1" class="well notes">
+      <div ng-if="notes.length >= 1" class="well notes row">
         <h3>Recipe Notes</h3>
-        <p ng-repeat="note in notes">{{note.note}}</p>
+        <p class="list-group-item col-md-12" ng-repeat="note in notes">{{note.note}}
+          <!-- <button class="delete badge" ng-click="deleteNote(note.id)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button> -->
+        </p>
       </div>
 
     </article> <!-- LEFT COLUMN -->

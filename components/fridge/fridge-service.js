@@ -42,7 +42,7 @@
     };
 
     function deleteItem(index){
-        fridgeItems.splice(index, 1)
+      fridgeItems.splice(index, 1)
     };
 
 

@@ -21,7 +21,6 @@
       }
     }
 
-    console.log("hello!");
     $http({
       method: 'GET',
       // url: 'http://localhost:3000/saved/' + $stateParams.id
@@ -37,6 +36,7 @@
         $scope.areInstructions = false;
       }
       $scope.notes = response.data[1]
+      // console.log($scope.notes);
     });
 
     $scope.stepFocus = 0;
@@ -81,6 +81,10 @@
     $scope.addNote = function(note){
       SavedService.addNote(note)
     }
+
+    // $scope.deleteNote = function(id){
+    //   SavedService.deleteNote(id)
+    // }
 
   }
 })();

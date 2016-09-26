@@ -153,6 +153,8 @@ header {
   margin-top: 1em; }
   .recipe .notes h3 {
     margin-top: 0; }
+  .recipe .notes p {
+    background-color: whitesmoke; }
 
 .modal {
   background-color: white;
@@ -184,5 +186,13 @@ header {
   width: 100%;
   margin-bottom: .5em;
   color: #3e4055; }
+
+.delete {
+  color: white;
+  background-color: #db0000;
+  border-radius: 0;
+  border: none;
+  margin-top: 1em;
+  margin-top: 0; }
 
 /*# sourceMappingURL=main.css.map */
