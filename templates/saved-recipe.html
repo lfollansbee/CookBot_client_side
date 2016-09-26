@@ -28,9 +28,9 @@
         </li>
       </ol>
 
-      <div ng-if="recipe.notes" class="well notes">
+      <div ng-if="notes.length >= 1" class="well notes">
         <h3>Recipe Notes</h3>
-        <p>{{recipe.notes}}</p>
+        <p ng-repeat="note in notes">{{note.note}}</p>
       </div>
 
     </article> <!-- LEFT COLUMN -->
