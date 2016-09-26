@@ -7,7 +7,6 @@
 
 .home .jumbotron{
   // background-image: url(../images/A535FDBB21.jpg);
-  // background-image: url(../images/cooking-header.jpeg);
   background-image: url(../images/peppers.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,7 +15,8 @@
   color: white;
   font-size: 2rem;
   margin-bottom: 0;
-  min-height: 35em;
+  // min-height: 35em;
+  min-height: 80vh;
   // min-height: 26em;
   h2{
     margin-top: 1.5em;
