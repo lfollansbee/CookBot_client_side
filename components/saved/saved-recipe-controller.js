@@ -21,6 +21,7 @@
       }
     }
 
+    console.log("hello!");
     $http({
       method: 'GET',
       // url: 'http://localhost:3000/saved/' + $stateParams.id
