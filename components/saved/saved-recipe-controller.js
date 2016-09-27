@@ -36,7 +36,6 @@
         $scope.areInstructions = false;
       }
       $scope.notes = response.data[1]
-      // console.log($scope.notes);
     });
 
     $scope.stepFocus = 0;
@@ -82,9 +81,9 @@
       SavedService.addNote(note)
     }
 
-    // $scope.deleteNote = function(id){
-    //   SavedService.deleteNote(id)
-    // }
+    $scope.deleteNote = function(id){
+      SavedService.deleteNote(id)
+    }
 
   }
 })();

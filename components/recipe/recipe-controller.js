@@ -54,7 +54,6 @@
         $scope.instructions = (response[1].data[0].steps)
         $scope.instructions.unshift($scope.firstStep)
         $scope.checkInstructions($scope.instructions)
-        // console.log($scope.recipe, $scope.instructions)
       }else{
         $scope.areInstructions = false;
       }
