@@ -17,6 +17,10 @@
         templateUrl: 'templates/home.html',
         controller: 'SearchController'
       })
+      .state('about',{
+        url:'/about',
+        templateUrl: 'templates/about.html'
+      })
       .state('results', {
         url: '/results/:id',
         templateUrl: 'templates/results.html',

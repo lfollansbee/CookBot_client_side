@@ -48,7 +48,6 @@
 
     function fridgeSearch(array){
       var searchQuery = array;
-      // console.log(searchQuery);
       $http({
         method: 'GET',
         params:{
